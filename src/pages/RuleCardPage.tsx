@@ -144,7 +144,7 @@ export default function RuleCardPage() {
   }, [game, enabledExpansions])
 
   const combinedTurnActions = useMemo(() => {
-    if (!game) return []
+    if (!game || !game.turnActions) return []
 
     const additions: { type: 'base' | string; source: string; onYourTurn?: string[]; outsideYourTurn?: string[] }[] = [
       { type: 'base', source: '基础规则', onYourTurn: game.turnActions.onYourTurn, outsideYourTurn: game.turnActions.outsideYourTurn }
