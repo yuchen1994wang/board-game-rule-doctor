@@ -296,7 +296,39 @@ export default function RuleCardPage() {
             {language === 'zh' ? game.name : game.nameEn}
           </h1>
           <p className="text-lg text-[#1a4731]/50 mb-2">{language === 'zh' ? game.nameEn : game.name}</p>
+          <div className="flex items-center gap-2 mb-3 flex-wrap">
+            {game.category.map(cat => (
+              <span
+                key={cat}
+                className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                  cat === '德式' ? 'bg-blue-100 text-blue-700' :
+                  cat === '美式' ? 'bg-red-100 text-red-700' :
+                  cat === '聚会' ? 'bg-purple-100 text-purple-700' :
+                  cat === '合作' ? 'bg-green-100 text-green-700' :
+                  cat === '抽象' ? 'bg-gray-100 text-gray-700' :
+                  'bg-gray-100 text-gray-700'
+                }`}
+              >
+                {cat}
+              </span>
+            ))}
+            {game.mechanism.map(mech => (
+              <span
+                key={mech}
+                className="text-xs px-2 py-0.5 rounded-full font-medium bg-[#1a4731]/10 text-[#1a4731]"
+              >
+                {mech}
+              </span>
+            ))}
+          </div>
           <p className="text-[#1a4731]/70">{language === 'zh' ? game.description : game.nameEn}</p>
+          
+          {game.background && (
+            <div className="mt-4 p-4 bg-[#1a4731]/5 rounded-lg border border-[#1a4731]/10">
+              <h3 className="text-sm font-semibold text-[#1a4731] mb-2">{t('游戏背景', 'Game Background')}</h3>
+              <p className="text-sm text-[#1a4731]/70 leading-relaxed">{game.background}</p>
+            </div>
+          )}
           
           {enabledExpansions.length > 0 && (
             <div className="flex items-center gap-2 mt-3 flex-wrap">

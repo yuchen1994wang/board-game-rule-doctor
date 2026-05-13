@@ -49,7 +49,7 @@ export default function ExpansionModal({ gameId, onClose }: ExpansionModalProps)
     const params = selectedExpansions.length > 0 
       ? `?expansions=${selectedExpansions.join(',')}`
       : ''
-    navigate(`/game/${gameId}${params}`)
+    navigate(`/rule/${gameId}${params}`)
   }
 
   const handleBackdropClick = (e: React.MouseEvent) => {

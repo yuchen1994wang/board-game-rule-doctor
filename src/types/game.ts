@@ -71,6 +71,7 @@ export interface GameRule {
   tokens?: TokenReference[];
   cards?: CardReference[];
   roundPhases?: RoundPhase[];
+  background?: string;
 }
 
 export interface ExpansionSetup extends GameSetup {

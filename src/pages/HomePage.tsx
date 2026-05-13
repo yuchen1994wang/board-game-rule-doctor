@@ -47,7 +47,7 @@ export default function HomePage() {
     if (game?.hasExpansions) {
       setSelectedGame(gameId)
     } else {
-      window.location.href = `/game/${gameId}`
+      window.location.href = `/rule/${gameId}`
     }
   }
 

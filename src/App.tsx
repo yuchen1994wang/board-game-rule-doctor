@@ -9,7 +9,7 @@ export default function App() {
       <Router basename="/board-game-rule-doctor">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/game/:id" element={<RuleCardPage />} />
+          <Route path="/rule/:id" element={<RuleCardPage />} />
         </Routes>
       </Router>
     </LanguageProvider>

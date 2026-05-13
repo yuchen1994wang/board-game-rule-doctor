@@ -283,6 +283,7 @@ export const games: GameRule[] = [
     name: '双城之间',
     nameEn: 'Between Two Cities',
     description: '合作建造城市的板块轮抽策略桌游',
+    background: '在《双城之间》中，玩家们扮演城市建筑师，需要在两座相邻的城市之间进行建设。每位玩家同时与左右两位邻居合作建造城市，但最终的得分取决于两座合作城市中较低的那一座。这种独特的合作与竞争机制让玩家们既要帮助邻居，又要确保自己的城市发展均衡。游戏由 Stonemaier Games 出版，设计师为 Matthew O\'Malley 和 Ben Rosset，于2015年发行。',
     image: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Between_Two_Cities_cover.jpg/220px-Between_Two_Cities_cover.jpg',
     hasExpansions: false,
     category: ['德式', '合作'],
