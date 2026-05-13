@@ -94,7 +94,23 @@ export default function HomePage() {
                 className="w-full text-left p-4 bg-white rounded-xl border-2 border-[#1a4731]/10 hover:border-[#1a4731]/30 hover:shadow-md transition-all group"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-[#1a4731]/10">
+                  <div 
+                    className="w-16 h-16 rounded-lg flex-shrink-0 overflow-hidden flex items-center justify-center text-center p-1 font-bold text-sm leading-tight relative"
+                    style={{
+                      backgroundColor: game.category[0] === '德式' ? '#dbeafe' : 
+                                      game.category[0] === '美式' ? '#fee2e2' : 
+                                      game.category[0] === '聚会' ? '#f3e8ff' : 
+                                      game.category[0] === '合作' ? '#dcfce7' : 
+                                      game.category[0] === '抽象' ? '#f5f5f4' : 
+                                      '#e5e7eb',
+                      color: game.category[0] === '德式' ? '#1e40af' : 
+                             game.category[0] === '美式' ? '#991b1b' : 
+                             game.category[0] === '聚会' ? '#7c3aed' : 
+                             game.category[0] === '合作' ? '#166534' : 
+                             game.category[0] === '抽象' ? '#57534e' : 
+                             '#374151'
+                    }}
+                  >
                     <img
                       src={game.image}
                       alt={game.name}
@@ -102,8 +118,16 @@ export default function HomePage() {
                       onError={(e) => {
                         const target = e.target as HTMLImageElement
                         target.style.display = 'none'
+                        const parent = target.parentElement
+                        if (parent) {
+                          const span = parent.querySelector('.fallback-name') as HTMLElement
+                          if (span) span.classList.remove('hidden')
+                        }
                       }}
                     />
+                    <span className="hidden fallback-name">
+                      {language === 'zh' ? game.name : game.nameEn}
+                    </span>
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">

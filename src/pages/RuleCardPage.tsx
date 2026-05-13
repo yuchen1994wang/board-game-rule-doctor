@@ -257,7 +257,23 @@ export default function RuleCardPage() {
         </div>
 
         <header className="mb-8">
-          <div className="w-full h-48 rounded-xl overflow-hidden mb-4 bg-[#1a4731]/10">
+          <div 
+            className="w-full h-48 rounded-xl overflow-hidden mb-4 flex items-center justify-center text-center p-4 font-bold text-2xl leading-tight"
+            style={{
+              backgroundColor: game.category[0] === '德式' ? '#dbeafe' : 
+                              game.category[0] === '美式' ? '#fee2e2' : 
+                              game.category[0] === '聚会' ? '#f3e8ff' : 
+                              game.category[0] === '合作' ? '#dcfce7' : 
+                              game.category[0] === '抽象' ? '#f5f5f4' : 
+                              '#e5e7eb',
+              color: game.category[0] === '德式' ? '#1e40af' : 
+                     game.category[0] === '美式' ? '#991b1b' : 
+                     game.category[0] === '聚会' ? '#7c3aed' : 
+                     game.category[0] === '合作' ? '#166534' : 
+                     game.category[0] === '抽象' ? '#57534e' : 
+                     '#374151'
+            }}
+          >
             <img
               src={game.image}
               alt={language === 'zh' ? game.name : game.nameEn}
@@ -265,8 +281,16 @@ export default function RuleCardPage() {
               onError={(e) => {
                 const target = e.target as HTMLImageElement
                 target.style.display = 'none'
+                const parent = target.parentElement
+                if (parent) {
+                  const span = parent.querySelector('.fallback-name') as HTMLElement
+                  if (span) span.classList.remove('hidden')
+                }
               }}
             />
+            <span className="hidden fallback-name">
+              {language === 'zh' ? game.name : game.nameEn}
+            </span>
           </div>
           <h1 className="text-3xl font-serif font-bold text-[#1a4731] mb-1">
             {language === 'zh' ? game.name : game.nameEn}
