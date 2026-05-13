@@ -7,7 +7,7 @@ export const expansions: Expansion[] = [
     name: '飞行扩展',
     shortDesc: '新增鸟类物种面板和飞行特性卡，物种可以迁徙和俯冲攻击',
     description: '引入空中维度！飞行物种可以迁徙到新的栖息地，俯冲攻击地面猎物，大大增加策略深度和游戏互动。鸟类物种面板让你的生态系统更加丰富。',
-    image: 'https://cf.geekdo-images.com/img/2428179/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Evolution_board_game.jpg/220px-Evolution_board_game.jpg',
     playerCount: '2-6人（基础2-6人不变）',
     conflictsWith: ['evolution-climate'],
     setup: [
@@ -43,7 +43,7 @@ export const expansions: Expansion[] = [
     name: '气候扩展',
     shortDesc: '引入气候变化机制，天气会影响食物产出和物种生存',
     description: '挑战自然之力！气候版图的引入让游戏更加不可预测。极端天气可能导致物种大规模灭绝，你需要提前规划气候适应策略。',
-    image: 'https://cf.geekdo-images.com/img/2428179/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Evolution_board_game.jpg/220px-Evolution_board_game.jpg',
     playerCount: '2-6人（基础2-6人不变）',
     conflictsWith: ['evolution-flight'],
     setup: [
@@ -84,7 +84,7 @@ export const expansions: Expansion[] = [
     name: '疯王城堡扩展',
     shortDesc: '融合疯王城堡机制，增加特殊行动板块和更复杂的合作规则',
     description: '两城之间的进化版！融合经典桌游《疯王城堡》的独特机制，引入城堡控制权争夺和特殊行动板块，让合作建造更加刺激有趣。',
-    image: 'https://cf.geekdo-images.com/img/2869714/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Between_Two_Cities_cover.jpg/220px-Between_Two_Cities_cover.jpg',
     playerCount: '3-7人（基础3-7人不变）',
     setup: [
       {
@@ -118,7 +118,7 @@ export const expansions: Expansion[] = [
     name: '新角色扩展',
     shortDesc: '新增多种职业角色，丰富游戏策略选择',
     description: '更多选择，更多策略！引入全新的职业角色，每个角色都有独特的能力和经济优势。合理搭配角色顺序将成为获胜的关键。',
-    image: 'https://cf.geekdo-images.com/img/107809/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Puerto_Rico_board_game.jpg/220px-Puerto_Rico_board_game.jpg',
     playerCount: '3-6人（扩展支持到6人）',
     setup: [
       {
@@ -152,7 +152,7 @@ export const expansions: Expansion[] = [
     name: '殖民地扩展',
     shortDesc: '新增太空站和轨道设施建造，开拓火星新区域',
     description: '冲出火星，走向太空！殖民地扩展让你可以在轨道上建造太空站，开启全新的资源获取方式和得分途径。战略维度大幅提升。',
-    image: 'https://cf.geekdo-images.com/img/3538336/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7d/Terraforming_Mars_board_game.jpg/220px-Terraforming_Mars_board_game.jpg',
     playerCount: '1-5人（基础1-5人不变）',
     setup: [
       {
@@ -195,7 +195,7 @@ export const expansions: Expansion[] = [
     name: 'Prelude 扩展',
     shortDesc: '游戏开始时获得强力起始资源和项目，快速进入中后期',
     description: '跳过无聊的前期！Prelude让你在游戏开始时就获得强力起始资源和发展项目，直接进入精彩的中后期博弈，大幅缩短游戏时间。',
-    image: 'https://cf.geekdo-images.com/img/3538336/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7d/Terraforming_Mars_board_game.jpg/220px-Terraforming_Mars_board_game.jpg',
     playerCount: '1-5人（基础1-5人不变）',
     setup: [
       {
@@ -229,7 +229,7 @@ export const expansions: Expansion[] = [
     name: '艺术大师扩展',
     shortDesc: '新增私人目标卡和更复杂的图案挑战',
     description: '成为真正的艺术大师！新增12张私人目标卡和更精美的图案面板，为追求高难度的玩家提供更多策略选择和视觉享受。',
-    image: 'https://cf.geekdo-images.com/img/3516896/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Sagrada_board_game.jpg/220px-Sagrada_board_game.jpg',
     playerCount: '1-4人（基础1-4人不变）',
     setup: [
       {
@@ -266,7 +266,7 @@ export const expansions: Expansion[] = [
     name: '热情似火扩展',
     shortDesc: '新增特殊骰子和色彩挑战面板',
     description: '热情如火，创意无限！引入彩色骰子打破颜色限制，让你在放置时有更多选择。适合追求高难度挑战和创意的玩家。',
-    image: 'https://cf.geekdo-images.com/img/3516896/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Sagrada_board_game.jpg/220px-Sagrada_board_game.jpg',
     playerCount: '1-4人（基础1-4人不变）',
     setup: [
       {
@@ -301,7 +301,7 @@ export const expansions: Expansion[] = [
     nameEn: 'The Castles of Burgundy: Expansion',
     shortDesc: '新增6块玩家版图、新建筑和新成就token',
     description: '为勃艮第城堡带来全新体验！扩展包含6块全新的双面玩家版图，提供不同的起始布局和挑战。新增多种建筑token和成就token，让每局游戏都有新鲜感。',
-    image: 'https://cf.geekdo-images.com/img/1176894/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/The_Castles_of_Burgundy.jpg/220px-The_Castles_of_Burgundy.jpg',
     playerCount: '2-4人（基础2-4人不变）',
     setup: [
       {
@@ -343,7 +343,7 @@ export const expansions: Expansion[] = [
     nameEn: 'The Castles of Burgundy: 2nd Expansion',
     shortDesc: '新增贸易站和僧侣系统',
     description: '引入贸易站和僧侣系统！贸易站提供新的资源获取方式，僧侣可以执行特殊祈祷行动。扩展还包含新的货物类型和更多的策略选择。',
-    image: 'https://cf.geekdo-images.com/img/1176894/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/The_Castles_of_Burgundy.jpg/220px-The_Castles_of_Burgundy.jpg',
     playerCount: '2-4人（基础2-4人不变）',
     conflictsWith: ['burgundy-exp1'],
     setup: [
@@ -391,7 +391,7 @@ export const expansions: Expansion[] = [
     nameEn: 'Concordia: Map Expansion 1 - Aelos',
     shortDesc: '新增Aeols地图，增加新的城市和省份布局',
     description: '探索新的领土！新增Aeols地图，包含全新的城市布局和省份配置，为游戏带来更多变数和策略选择。',
-    image: 'https://cf.geekdo-images.com/img/1612412/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Concordia_board_game.jpg/220px-Concordia_board_game.jpg',
     playerCount: '2-5人（基础2-5人不变）',
     setup: [
       {
@@ -416,7 +416,7 @@ export const expansions: Expansion[] = [
     nameEn: 'Concordia: Map Expansion 2 - Britain & mare Nostrum',
     shortDesc: '新增Britannia和Mare Nostrum两张地图',
     description: '跨越海洋！新增Britannia（大不列颠岛）和Mare Nostrum（地中海）两张地图，带来完全不同的地理布局和路线挑战。',
-    image: 'https://cf.geekdo-images.com/img/1612412/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Concordia_board_game.jpg/220px-Concordia_board_game.jpg',
     playerCount: '2-5人（基础2-5人不变）',
     setup: [
       {
@@ -441,7 +441,7 @@ export const expansions: Expansion[] = [
     nameEn: 'Himeji Castle: Tea Ceremony Expansion',
     shortDesc: '新增茶道系统，提供新的得分方式和互动',
     description: '品味日本茶道文化！引入茶道系统，玩家可以通过举办茶会获得额外资源和分数，增加游戏互动和策略深度。',
-    image: 'https://cf.geekdo-images.com/img/2278130/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Himeji_Castle_02.jpg/220px-Himeji_Castle_02.jpg',
     playerCount: '2-4人（基础2-4人不变）',
     setup: [
       {
@@ -488,7 +488,7 @@ export const expansions: Expansion[] = [
     nameEn: 'Troyes: Ladies Expansion',
     shortDesc: '新增女士角色卡，提供独特的能力和策略选择',
     description: '引入历史人物！新增多位特鲁瓦历史上的著名女士角色卡，每位女士都有独特的能力和终局计分效果，丰富游戏策略。',
-    image: 'https://cf.geekdo-images.com/img/819625/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Troyes_board_game.jpg/220px-Troyes_board_game.jpg',
     playerCount: '2-4人（基础2-4人不变）',
     setup: [
       {
@@ -530,7 +530,7 @@ export const expansions: Expansion[] = [
     nameEn: 'Wyrmspan: Expansion',
     shortDesc: '新增更多龙牌、巢穴卡和森林版图',
     description: '扩展龙的世界！新增更多龙牌种类、新的巢穴卡和森林版图，为游戏带来更多龙类选择和策略变数。',
-    image: 'https://cf.geekdo-images.com/img/7309045/repv1.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Wingspan_board_game.jpg/220px-Wingspan_board_game.jpg',
     playerCount: '1-5人（基础1-5人不变）',
     setup: [
       {
