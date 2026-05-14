@@ -1,11 +1,13 @@
 import { useMemo, useEffect } from 'react'
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
-import { ArrowLeft, Users, PlayCircle, PauseCircle, Trophy, Target, Lightbulb, Settings, AlertTriangle, Package, ChevronDown, ChevronUp, Globe, Hexagon, Layers, LayoutGrid, Flag } from 'lucide-react'
+import { ArrowLeft, Users, PlayCircle, PauseCircle, Trophy, Target, Lightbulb, Settings, AlertTriangle, Package, ChevronDown, ChevronUp, Globe, Hexagon, Layers, LayoutGrid, Flag, MessageCircle, Camera } from 'lucide-react'
 import { useState } from 'react'
 import { games } from '@/data/games'
 import { expansions } from '@/data/expansions'
 import { useLanguage } from '@/contexts/LanguageContext'
 import RuleFeedbackModal from '@/components/RuleFeedbackModal'
+import GameChatModal from '@/components/GameChatModal'
+import PhotoScoringModal from '@/components/PhotoScoringModal'
 import type { Expansion, GameSetup } from '@/types/game'
 
 function RuleSection({ 
@@ -101,6 +103,8 @@ export default function RuleCardPage() {
   const { language, toggleLanguage, t } = useLanguage()
   const [activeTab, setActiveTab] = useState<TabKey>('setup')
   const [showFeedback, setShowFeedback] = useState(false)
+  const [showChat, setShowChat] = useState(false)
+  const [showPhotoScoring, setShowPhotoScoring] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -250,6 +254,20 @@ export default function RuleCardPage() {
             <span>{t('返回首页', 'Back to Home')}</span>
           </button>
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowChat(true)}
+              className="flex items-center gap-1 px-3 py-1.5 bg-white rounded-lg border-2 border-blue-200 hover:border-blue-400 transition-colors text-sm text-blue-700"
+            >
+              <MessageCircle className="w-4 h-4" />
+              {language === 'zh' ? '提问' : 'Ask'}
+            </button>
+            <button
+              onClick={() => setShowPhotoScoring(true)}
+              className="flex items-center gap-1 px-3 py-1.5 bg-white rounded-lg border-2 border-purple-200 hover:border-purple-400 transition-colors text-sm text-purple-700"
+            >
+              <Camera className="w-4 h-4" />
+              {language === 'zh' ? '算分' : 'Score'}
+            </button>
             <button
               onClick={() => setShowFeedback(true)}
               className="flex items-center gap-1 px-3 py-1.5 bg-white rounded-lg border-2 border-amber-200 hover:border-amber-400 transition-colors text-sm text-amber-700"
@@ -616,6 +634,20 @@ export default function RuleCardPage() {
             gameId={game.id}
             gameName={language === 'zh' ? game.name : game.nameEn}
             onClose={() => setShowFeedback(false)}
+          />
+        )}
+
+        {showChat && (
+          <GameChatModal
+            game={game}
+            onClose={() => setShowChat(false)}
+          />
+        )}
+
+        {showPhotoScoring && (
+          <PhotoScoringModal
+            game={game}
+            onClose={() => setShowPhotoScoring(false)}
           />
         )}
       </div>
