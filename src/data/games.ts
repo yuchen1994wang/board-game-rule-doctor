@@ -211,9 +211,9 @@ export const games: GameRule[] = [
       { name: '市场标记', description: '放置在市场需求区，用于出售货物获得收入' }
     ],
     cards: [
-      { name: '工业卡', count: 54, description: '包含所有工业建筑（煤、铁、港口等）' },
-      { name: '商船卡', count: 14, description: '运河时代和铁路时代的远距离运输' },
-      { name: '远见卡', count: 16, description: '玩家手牌，影响资源和建设策略' }
+      { name: '工业卡', count: 54, description: '包含所有工业建筑（煤、铁、港口等）', value: 1 },
+      { name: '商船卡', count: 14, description: '运河时代和铁路时代的远距离运输', value: 2 },
+      { name: '远见卡', count: 16, description: '玩家手牌，影响资源和建设策略', value: 3 }
     ]
   },
   {
@@ -449,8 +449,8 @@ export const games: GameRule[] = [
       { name: '水塘', description: '中央区域，玩家暗自打出卡牌决定每轮植物性食物总量' }
     ],
     cards: [
-      { name: '特性卡', count: 129, description: '包含所有生物特性（攻击、防御、食性等）' },
-      { name: '食物卡', count: 24, description: '用于喂养物种的食物供应' }
+      { name: '特性卡', count: 129, description: '包含所有生物特性（攻击、防御、食性等）', value: 1 },
+      { name: '食物卡', count: 24, description: '用于喂养物种的食物供应', value: 2 }
     ]
   },
   {
@@ -542,8 +542,8 @@ export const games: GameRule[] = [
       { name: '船只', description: '用于运送货物到欧洲获得VP，有不同容量的船只' }
     ],
     cards: [
-      { name: '建筑卡', count: 56, description: '包含种植园（玉米/靛蓝/糖/烟草/咖啡）和大型建筑' },
-      { name: '角色卡', count: 7, description: '选择器面板：定居者、船长、商人、工匠、船长、矿工、建筑师' }
+      { name: '建筑卡', count: 56, description: '包含种植园（玉米/靛蓝/糖/烟草/咖啡）和大型建筑', value: 1 },
+      { name: '角色卡', count: 7, description: '选择器面板：定居者、船长、商人、工匠、船长、矿工、建筑师', value: 2 }
     ]
   },
   {
@@ -624,8 +624,8 @@ export const games: GameRule[] = [
       { name: '资源token', description: '各种资源（木材/石材/金币等），用于建造和升级' }
     ],
     cards: [
-      { name: '文明卡', count: 24, description: '提供文化和金钱奖励的特殊卡牌' },
-      { name: '地形卡', count: 48, description: '用于构建地形的板块' }
+      { name: '文明卡', count: 24, description: '提供文化和金钱奖励的特殊卡牌', value: 1 },
+      { name: '地形卡', count: 48, description: '用于构建地形的板块', value: 2 }
     ]
   },
   {
@@ -711,9 +711,9 @@ export const games: GameRule[] = [
       { name: 'MC货币', description: 'MegaCredit，游戏主要货币，用于支付项目费用' }
     ],
     cards: [
-      { name: '项目卡', count: 208, description: '蓝色项目卡（标准版）' },
-      { name: '公司卡', count: 10, description: '起始公司特殊能力' },
-      { name: 'Prelude卡', count: 56, description: '需要Prelude扩' }
+      { name: '项目卡', count: 208, description: '蓝色项目卡（标准版）', value: 1 },
+      { name: '公司卡', count: 10, description: '起始公司特殊能力', value: 2 },
+      { name: 'Prelude卡', count: 56, description: '需要Prelude扩', value: 3 }
     ]
   },
   {
@@ -793,7 +793,7 @@ export const games: GameRule[] = [
       { name: '省份图腾', description: '控制完整省份后获得的奖励标记，终局计2分' }
     ],
     cards: [
-      { name: '商队卡', count: 65, description: ' colonists移民、先驱者、商人、建筑师、Settlers定居者等' }
+      { name: '商队卡', count: 65, description: ' colonists移民、先驱者、商人、建筑师、Settlers定居者等', value: 1 }
     ]
   },
   {
@@ -870,7 +870,7 @@ export const games: GameRule[] = [
       { name: '资金token', description: '玩家的货币，用于拍卖出价购买画作' }
     ],
     cards: [
-      { name: '名画卡', count: 60, description: '5位艺术家各12张：Ovan O Beka、Lars Lise、Antoine Vilms、Claire Bishop、Heidi Hayes' }
+      { name: '名画卡', count: 60, description: '5位艺术家各12张：Ovan O Beka、Lars Lise、Antoine Vilms、Claire Bishop、Heidi Hayes', value: 1 }
     ]
   },
   {
@@ -1033,8 +1033,8 @@ export const games: GameRule[] = [
       { name: '金币', description: '游戏货币，用于购买资源、改变骰子和支付费用' }
     ],
     cards: [
-      { name: '事件卡', count: 24, description: '影响骰子和行动的随机事件' },
-      { name: '女士卡', count: 9, description: '需要女士扩，提供独特能力和终局计分' }
+      { name: '事件卡', count: 24, description: '影响骰子和行动的随机事件', value: 1 },
+      { name: '女士卡', count: 9, description: '需要女士扩，提供独特能力和终局计分', value: 2 }
     ]
   },
   {
@@ -1116,8 +1116,8 @@ export const games: GameRule[] = [
       { name: '分数标记', description: '追踪玩家当前得分，在分数轨道上移动' }
     ],
     cards: [
-      { name: '目标卡', count: 16, description: '8张公共目标卡和8张私人目标卡' },
-      { name: '工具卡', count: 6, description: '特殊行动能力' }
+      { name: '目标卡', count: 16, description: '8张公共目标卡和8张私人目标卡', value: 1 },
+      { name: '工具卡', count: 6, description: '特殊行动能力', value: 2 }
     ]
   },
   {
@@ -1200,8 +1200,8 @@ export const games: GameRule[] = [
       { name: '森林版图', description: '中央区域，玩家从中收集龙蛋和资源' }
     ],
     cards: [
-      { name: '龙牌', count: 83, description: '红龙、翡翠龙、金龙、蓝龙、紫龙等5种颜色' },
-      { name: '巢穴卡', count: 42, description: '提供龙能力增强的特殊卡' }
+      { name: '龙牌', count: 83, description: '红龙、翡翠龙、金龙、蓝龙、紫龙等5种颜色', value: 1 },
+      { name: '巢穴卡', count: 42, description: '提供龙能力增强的特殊卡', value: 2 }
     ]
   },
   {
@@ -1970,71 +1970,11 @@ export const games: GameRule[] = [
       { name: '金币', description: '游戏货币' }
     ],
     cards: [
-      { name: '装备卡', count: 24, description: '各种淘金装备' },
-      { name: '事件卡', count: 16, description: '随机事件' }
+      { name: '装备卡', count: 24, description: '各种淘金装备', value: 1 },
+      { name: '事件卡', count: 16, description: '随机事件', value: 2 }
     ]
   },
-  {
-    id: 'the-wizards-gambit',
-    name: '诈赌巫师',
-    nameEn: "The Wizard's Gambit",
-    description: '奇幻主题策略桌游',
-    playerCount: '2-4人',
-    weight: 2.8,
-    background: '《诈赌巫师》是一款奇幻主题的策略游戏，玩家扮演巫师，通过魔法和谋略来竞争。游戏机制融合了手牌管理、策略规划和心理博弈，玩家需要虚张声势、策略性地使用卡牌来获得胜利。作为一款中等重量的策略游戏，它以其奇幻主题、深度策略和互动性著称，适合喜欢策略游戏的玩家。',
-    image: '/images/the-wizards-gambit.jpg',
-    hasExpansions: false,
-    category: ['德式'],
-    mechanism: ['手牌管理', '策略'],
-    setup: [
-      {
-        playerCount: '2-4人',
-        steps: [
-          '摆放游戏板',
-          '每位玩家选择巫师',
-          '洗混魔法卡牌',
-          '拿取起始手牌',
-          '决定起始玩家'
-        ]
-      }
-    ],
-    turnActions: {
-      onYourTurn: [
-        '打出卡牌',
-        '使用魔法',
-        '虚张声势',
-        '获取优势'
-      ],
-      outsideYourTurn: [
-        '观察对手的策略',
-        '判断虚实'
-      ]
-    },
-    endConditions: [
-      '达成胜利条件',
-      '或当卡牌耗尽时'
-    ],
-    scoring: {
-      duringGame: [
-        '获得魔法力量'
-      ],
-      endGame: [
-        '计算总分数',
-        '分数最高者获胜'
-      ]
-    },
-    tips: [
-      '游戏支持2-4人',
-      '心理博弈很重要',
-      '虚张声势是策略',
-      '游戏时长约30-45分钟'
-    ],
-    cards: [
-      { name: '巫师卡', description: '每位玩家的巫师角色卡', count: 4 },
-      { name: '魔法卡', description: '各种魔法效果卡牌', count: 40 },
-      { name: '事件卡', description: '随机事件卡牌', count: 20 }
-    ]
-  },
+
   {
     id: 'prisoners-of-the-dance',
     name: '犯人在跳舞',
@@ -2160,16 +2100,16 @@ export const games: GameRule[] = [
       { name: '好感指示物', description: '赢得一轮的标记' }
     ],
     cards: [
-      { name: '刺客', count: 1, description: '当你成为侍卫目标时，打出侍卫的玩家淘汰，你弃置此卡并重抽' },
-      { name: '弄臣', count: 1, description: '选择一名玩家，若本轮其胜出，你也获得1个指示物' },
-      { name: '侍卫', count: 3, description: '猜测一位玩家手牌（不能猜侍卫），若正确则该玩家出局' },
-      { name: '红衣主教', count: 2, description: '选择两名玩家互换，查看其中一人的手牌' },
-      { name: '男爵夫人', count: 2, description: '查看另一名或两名玩家的手牌' },
-      { name: '谄媚者', count: 2, description: '选定一名玩家，使其成为下一张牌必须指定的目标' },
-      { name: '伯爵', count: 2, description: '若此牌在本轮结束时在你的弃牌堆，结算点数+1' },
-      { name: '警察', count: 1, description: '若此牌在你淘汰时在你的弃牌堆，你获得1个指示物' },
-      { name: '太后', count: 1, description: '与一位玩家比手牌点数，较大者出局' },
-      { name: '主教', count: 1, description: '猜测一位玩家手牌，若正确你获得1个指示物；被指定玩家可选择弃牌重抽。结算时视为7.5点' }
+      { name: '刺客', count: 1, value: 0, category: '角色牌', description: '当你成为侍卫目标时，打出侍卫的玩家淘汰，你弃置此卡并重抽' },
+      { name: '弄臣', count: 1, value: 0, category: '角色牌', description: '选择一名玩家，若本轮其胜出，你也获得1个指示物' },
+      { name: '侍卫', count: 3, value: 1, category: '角色牌', description: '猜测一位玩家手牌（不能猜侍卫），若正确则该玩家出局' },
+      { name: '红衣主教', count: 2, value: 2, category: '角色牌', description: '选择两名玩家互换，查看其中一人的手牌' },
+      { name: '男爵夫人', count: 2, value: 3, category: '角色牌', description: '查看另一名或两名玩家的手牌' },
+      { name: '谄媚者', count: 2, value: 4, category: '角色牌', description: '选定一名玩家，使其成为下一张牌必须指定的目标' },
+      { name: '伯爵', count: 2, value: 5, category: '角色牌', description: '若此牌在本轮结束时在你的弃牌堆，结算点数+1' },
+      { name: '警察', count: 1, value: 6, category: '角色牌', description: '若此牌在你淘汰时在你的弃牌堆，你获得1个指示物' },
+      { name: '太后', count: 1, value: 7, category: '角色牌', description: '与一位玩家比手牌点数，较大者出局' },
+      { name: '主教', count: 1, value: 9, category: '角色牌', description: '猜测一位玩家手牌，若正确你获得1个指示物；被指定玩家可选择弃牌重抽。结算时视为7.5点' }
     ]
   },
   {

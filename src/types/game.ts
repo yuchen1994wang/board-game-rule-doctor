@@ -45,7 +45,9 @@ export interface CardReference {
   name: string;
   nameEn?: string;
   count: number;
+  value: number;
   description?: string;
+  category?: string;
 }
 
 export interface RoundPhase {
