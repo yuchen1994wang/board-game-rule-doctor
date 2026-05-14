@@ -557,5 +557,746 @@ export const expansions: Expansion[] = [
       '新森林版图需要调整策略',
       '巢穴卡组合更加丰富'
     ]
+  },
+  {
+    id: 'lh-inns-cathedrals',
+    gameId: 'le-havre',
+    name: '港都情浓：旅馆与大教堂',
+    nameEn: 'Le Havre: Inns & Cathedrals',
+    shortDesc: '新增旅馆和大教堂建筑，提供更多得分途径',
+    description: '扩展港都情浓的世界！新增旅馆和大教堂两种特殊建筑，为玩家提供更多得分途径和策略选择。旅馆可以接待旅客获得收入，大教堂则是终局计分的重要来源。',
+    image: '/images/le-havre.jpg',
+    playerCount: '1-5人（基础1-5人不变）',
+    setup: [
+      {
+        playerCount: '1-5人',
+        steps: [
+          '将旅馆和大教堂建筑token加入供应区',
+          '新增旅客token放入袋中',
+          '设置旅馆接待轨道',
+          '大教堂建造需要特定资源组合'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '建造旅馆：消耗资源建造，可接待旅客',
+          '建造大教堂：消耗大量资源，终局高分',
+          '接待旅客：获得即时收入和分数'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        endGame: [
+          '旅馆接待旅客数量分数',
+          '大教堂建造完成奖励',
+          '旅客满意度额外分数'
+        ]
+      }
+    },
+    tips: [
+      '旅馆是中期重要的收入来源',
+      '大教堂需要提前规划资源',
+      '旅客token数量有限，竞争激烈'
+    ]
+  },
+  {
+    id: 'carcassonne-exp1',
+    gameId: 'carcassonne',
+    name: '卡卡颂：旅馆与大教堂',
+    nameEn: 'Carcassonne: Inns & Cathedrals',
+    shortDesc: '新增旅馆和大教堂板块，以及大 Follower',
+    description: '经典扩展！新增旅馆（道路得分翻倍）和大教堂（城市得分翻倍）特殊板块，以及大 Follower（计为2个 Follower）。增加策略深度和互动。',
+    image: '/images/carcassonne.jpg',
+    playerCount: '2-6人（基础2-5人扩展到6人）',
+    setup: [
+      {
+        playerCount: '2-6人',
+        steps: [
+          '将扩展板块混入基础板块堆',
+          '每位玩家获得1个大 Follower（计为2个）',
+          '旅馆板块：道路完成时得分翻倍',
+          '大教堂板块：城市完成时得分翻倍'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '使用大 Follower：放置在关键位置，计为2个',
+          '完成旅馆道路：道路得分翻倍',
+          '完成大教堂城市：城市得分翻倍'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        duringGame: [
+          '旅馆道路完成：每条道路得分翻倍',
+          '大教堂城市完成：每个城市得分翻倍'
+        ]
+      }
+    },
+    tips: [
+      '大 Follower是强力资源，谨慎使用',
+      '旅馆和大教堂是必争之地',
+      '扩展支持6人游戏'
+    ]
+  },
+  {
+    id: 'carcassonne-traders',
+    gameId: 'carcassonne',
+    name: '卡卡颂：商人与建筑师',
+    nameEn: 'Carcassonne: Traders & Builders',
+    shortDesc: '新增商品token和建筑师 Follower',
+    description: '引入经济系统！城市中出现葡萄酒、布料和小麦商品token，完成城市的玩家收集商品。建筑师 Follower可以额外放置板块。',
+    image: '/images/carcassonne.jpg',
+    playerCount: '2-6人',
+    setup: [
+      {
+        playerCount: '2-6人',
+        steps: [
+          '将商品token（葡萄酒、布料、小麦）放入袋中',
+          '每位玩家获得1个建筑师 Follower',
+          '城市板块上放置商品token',
+          '完成城市时收集商品'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '使用建筑师：可以在已放置 Follower 的板块旁再放置',
+          '收集商品：完成城市时获得商品token',
+          '商品组合：收集全套商品获得额外分数'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        endGame: [
+          '商品收集：每种商品最高分',
+          '全套商品奖励：10分',
+          '建筑师使用效率奖励'
+        ]
+      }
+    },
+    tips: [
+      '商品token数量有限，尽早收集',
+      '建筑师可以加速城市完成',
+      '注意平衡得分和商品收集'
+    ]
+  },
+  {
+    id: 'ttr-europe-1912',
+    gameId: 'ticket-to-ride-europe',
+    name: '铁路环游欧洲：1912',
+    nameEn: 'Ticket to Ride: Europe - 1912',
+    shortDesc: '新增目的地卡、仓库和大型欧洲地图',
+    description: '扩展欧洲铁路网络！新增1912年大型欧洲地图、仓库机制和更多目的地卡。仓库允许玩家共享路线，增加互动和策略。',
+    image: '/images/ticket-to-ride-europe.jpg',
+    playerCount: '2-5人（基础2-5人不变）',
+    setup: [
+      {
+        playerCount: '2-5人',
+        steps: [
+          '使用1912年大型欧洲地图（替换基础地图）',
+          '放置仓库token到指定城市',
+          '新增目的地卡混入牌堆',
+          '仓库规则：连接到仓库可获得额外分数'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '连接仓库：路线连接到仓库城市获得额外分数',
+          '使用新目的地卡：更长更复杂的路线',
+          '大型地图：更多路线选择'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        duringGame: [
+          '仓库连接奖励：每次连接获得2分',
+          '新目的地卡：更长路线更高分数'
+        ],
+        endGame: [
+          '仓库网络完整性奖励',
+          '未完成新目的地卡惩罚：-5分'
+        ]
+      }
+    },
+    tips: [
+      '仓库是必争之地，尽早连接',
+      '新目的地卡更长但分数更高',
+      '大型地图需要更长远规划'
+    ]
+  },
+  {
+    id: 'ttr-europe-orient',
+    gameId: 'ticket-to-ride-europe',
+    name: '铁路环游欧洲：东方之旅',
+    nameEn: 'Ticket to Ride: Europe - Orient Express',
+    shortDesc: '新增东方快车路线和豪华车厢机制',
+    description: '乘坐东方快车！新增东方快车特殊路线和豪华车厢机制。豪华车厢提供额外能力，如免费建造、额外抽卡等。',
+    image: '/images/ticket-to-ride-europe.jpg',
+    playerCount: '2-5人',
+    setup: [
+      {
+        playerCount: '2-5人',
+        steps: [
+          '放置东方快车路线到地图上',
+          '每位玩家获得豪华车厢token',
+          '东方快车路线需要特定颜色组合',
+          '豪华车厢能力卡洗混放置'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '建造东方快车路线：获得额外分数',
+          '使用豪华车厢：获得特殊能力',
+          '豪华车厢能力：免费建造、额外抽卡等'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        duringGame: [
+          '东方快车路线：完成获得5分',
+          '豪华车厢使用：每次使用获得1分'
+        ],
+        endGame: [
+          '东方快车网络奖励',
+          '豪华车厢剩余奖励'
+        ]
+      }
+    },
+    tips: [
+      '东方快车路线竞争激烈',
+      '豪华车厢能力要适时使用',
+      '平衡东方快车和其他路线'
+    ]
+  },
+  {
+    id: 'afe-norway',
+    gameId: 'a-feast-for-odin',
+    name: '奥丁的盛宴：挪威传奇',
+    nameEn: 'A Feast for Odin: The Norwegians',
+    shortDesc: '新增挪威地图、长屋和传奇卡',
+    description: '探索挪威！新增挪威地图、长屋建造机制和传奇卡。长屋提供新的得分方式，传奇卡带来独特能力。',
+    image: '/images/a-feast-for-odin.jpg',
+    playerCount: '1-4人（基础1-4人不变）',
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '使用挪威地图（替换或并置）',
+          '放置长屋建造区域',
+          '传奇卡洗混放置',
+          '长屋需要特定资源组合建造'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '建造长屋：消耗资源，提供持续收益',
+          '使用传奇卡：获得独特能力',
+          '挪威地图：新的探索区域'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        endGame: [
+          '长屋完成奖励',
+          '传奇卡使用奖励',
+          '挪威区域探索奖励'
+        ]
+      }
+    },
+    tips: [
+      '长屋是长期投资，尽早建造',
+      '传奇卡能力要充分利用',
+      '挪威地图与基础地图策略不同'
+    ]
+  },
+  {
+    id: 'afe-mini',
+    gameId: 'a-feast-for-odin',
+    name: '奥丁的盛宴：迷你扩展',
+    nameEn: 'A Feast for Odin: Mini Expansion',
+    shortDesc: '新增小型岛屿和特殊行动卡',
+    description: '小幅扩展！新增小型岛屿板块和特殊行动卡，为游戏增加更多变数和策略选择。',
+    image: '/images/a-feast-for-odin.jpg',
+    playerCount: '1-4人',
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '添加小型岛屿到探索区域',
+          '特殊行动卡洗混放置',
+          '岛屿提供独特资源'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '探索岛屿：获得独特资源',
+          '使用特殊行动卡：额外行动'
+        ]
+      }
+    },
+    tips: [
+      '岛屿资源稀缺但价值高',
+      '特殊行动卡要把握时机'
+    ]
+  },
+  {
+    id: 'ttr-usa-1910',
+    gameId: 'ticket-to-ride',
+    name: '铁路环游：1910',
+    nameEn: 'Ticket to Ride: USA 1910',
+    shortDesc: '新增1910年地图、新目的地卡和大型游戏模式',
+    description: '经典扩展！新增1910年地图、更多目的地卡和大型游戏模式（Megalopolis）。大型游戏模式使用全地图，适合5人游戏。',
+    image: '/images/ticket-to-ride.jpg',
+    playerCount: '2-5人（基础2-5人不变）',
+    setup: [
+      {
+        playerCount: '2-5人',
+        steps: [
+          '使用1910年地图（替换基础地图）',
+          '新增目的地卡混入牌堆',
+          '大型游戏模式：使用全地图',
+          '新目的地卡更长更复杂'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '新目的地卡：更长路线更高分数',
+          '大型游戏模式：更多路线选择',
+          '1910年地图：新城市和新路线'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        duringGame: [
+          '新目的地卡：完成获得更高分数',
+          '大型游戏模式：最长路线奖励增加'
+        ],
+        endGame: [
+          '未完成新目的地卡惩罚：-5分',
+          '大型游戏模式特殊奖励'
+        ]
+      }
+    },
+    tips: [
+      '新目的地卡更长但分数更高',
+      '大型游戏模式适合5人',
+      '1910年地图策略与基础不同'
+    ]
+  },
+  {
+    id: 'ttr-usa-big-cities',
+    gameId: 'ticket-to-ride',
+    name: '铁路环游：大城市',
+    nameEn: 'Ticket to Ride: Big Cities',
+    shortDesc: '聚焦大城市之间的路线，新增大城市卡',
+    description: '大城市之间的铁路战争！新增大城市卡，聚焦主要城市之间的路线。大城市之间路线分数更高，但竞争更激烈。',
+    image: '/images/ticket-to-ride.jpg',
+    playerCount: '2-5人',
+    setup: [
+      {
+        playerCount: '2-5人',
+        steps: [
+          '放置大城市标记到地图',
+          '大城市卡洗混放置',
+          '大城市之间路线分数翻倍'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '完成大城市路线：分数翻倍',
+          '收集大城市卡：获得额外奖励'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        duringGame: [
+          '大城市路线：分数翻倍',
+          '大城市卡收集：组合奖励'
+        ]
+      }
+    },
+    tips: [
+      '大城市路线竞争激烈',
+      '提前规划大城市连接',
+      '平衡大城市和小城市路线'
+    ]
+  },
+  {
+    id: 'com-dark-mountain',
+    gameId: 'champions-of-midgard',
+    name: '维京传奇：黑暗山脉',
+    nameEn: 'Champions of Midgard: The Dark Mountains',
+    shortDesc: '新增黑暗山脉地图、新怪物和符文系统',
+    description: '征服黑暗山脉！新增黑暗山脉地图、新怪物类型和符文系统。符文提供特殊能力，新怪物更加强大。',
+    image: '/images/champions-of-midgard.jpg',
+    playerCount: '2-4人（基础2-4人不变）',
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '放置黑暗山脉版图',
+          '新怪物token放入袋中',
+          '符文卡洗混放置',
+          '符文提供特殊能力'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '探索黑暗山脉：遭遇新怪物',
+          '使用符文：获得特殊能力',
+          '新怪物：更强大但奖励更高'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        endGame: [
+          '黑暗山脉探索奖励',
+          '符文收集奖励',
+          '新怪物击败奖励'
+        ]
+      }
+    },
+    tips: [
+      '黑暗山脉怪物更强大',
+      '符文能力要充分利用',
+      '新怪物奖励丰厚但风险高'
+    ]
+  },
+  {
+    id: 'com-valhalla',
+    gameId: 'champions-of-midgard',
+    name: '维京传奇：瓦尔哈拉',
+    nameEn: 'Champions of Midgard: Valhalla',
+    shortDesc: '新增瓦尔哈拉机制、英灵战士和荣耀系统',
+    description: '为荣耀而战！新增瓦尔哈拉机制，阵亡的维京战士进入瓦尔哈拉，成为英灵战士提供持续收益。荣耀系统记录玩家的英勇事迹。',
+    image: '/images/champions-of-midgard.jpg',
+    playerCount: '2-4人',
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '放置瓦尔哈拉版图',
+          '英灵战士token放置',
+          '荣耀卡洗混放置',
+          '阵亡战士进入瓦尔哈拉'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '派遣战士：阵亡后进入瓦尔哈拉',
+          '英灵战士：提供持续收益',
+          '荣耀卡：记录英勇事迹'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        endGame: [
+          '瓦尔哈拉英灵数量奖励',
+          '荣耀卡完成奖励',
+          '英勇事迹额外分数'
+        ]
+      }
+    },
+    tips: [
+      '阵亡不一定是坏事',
+      '英灵战士是长期收益',
+      '荣耀卡要完成'
+    ]
+  },
+  {
+    id: 'eclipse-rise-ancients',
+    gameId: 'eclipse',
+    name: '星蚀：远古崛起',
+    nameEn: 'Eclipse: Rise of the Ancients',
+    shortDesc: '新增远古种族、新科技和星云版图',
+    description: '远古种族觉醒！新增多个远古种族、新科技树和星云版图。远古种族拥有独特能力，星云版图增加探索维度。',
+    image: '/images/eclipse.jpg',
+    playerCount: '2-9人（基础2-6人扩展到9人）',
+    setup: [
+      {
+        playerCount: '2-9人',
+        steps: [
+          '选择远古种族（替换基础种族）',
+          '使用星云版图（替换或并置）',
+          '新科技卡加入科技树',
+          '远古种族有独特能力'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '远古种族能力：每回合可使用',
+          '星云探索：新区域新资源',
+          '新科技：更强大的效果'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        endGame: [
+          '远古种族特殊奖励',
+          '星云控制区域奖励',
+          '新科技研发奖励'
+        ]
+      }
+    },
+    tips: [
+      '远古种族能力强大但要善用',
+      '星云版图增加探索维度',
+      '扩展支持9人游戏'
+    ]
+  },
+  {
+    id: 'eclipse-shadow-empire',
+    gameId: 'eclipse',
+    name: '星蚀：暗影帝国',
+    nameEn: 'Eclipse: Shadow of the Rift',
+    shortDesc: '新增暗影种族、裂隙机制和外交系统',
+    description: '暗影降临！新增暗影种族、裂隙机制和外交系统。裂隙连接不同区域，外交系统允许玩家结盟或背叛。',
+    image: '/images/eclipse.jpg',
+    playerCount: '2-9人',
+    setup: [
+      {
+        playerCount: '2-9人',
+        steps: [
+          '放置裂隙token到版图',
+          '外交卡洗混放置',
+          '暗影种族选择',
+          '裂隙连接不同区域'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '穿越裂隙：快速移动单位',
+          '外交行动：结盟或背叛',
+          '暗影能力：独特且强大'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        endGame: [
+          '裂隙控制奖励',
+          '外交关系奖励',
+          '暗影种族特殊奖励'
+        ]
+      }
+    },
+    tips: [
+      '裂隙是战略要地',
+      '外交关系要谨慎维护',
+      '暗影种族能力独特'
+    ]
+  },
+  {
+    id: 'is-aztecs',
+    gameId: 'imperial-settlers',
+    name: '帝国建筑师：阿兹特克',
+    nameEn: 'Imperial Settlers: Aztecs',
+    shortDesc: '新增阿兹特克文明、金字塔和祭祀机制',
+    description: '阿兹特克文明加入！新增阿兹特克文明、金字塔建造和祭祀机制。金字塔提供持续收益，祭祀可以获得神恩。',
+    image: '/images/imperial-settlers.jpg',
+    playerCount: '1-4人（基础1-4人不变）',
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '选择阿兹特克文明（替换或新增）',
+          '金字塔建造区域放置',
+          '祭祀卡洗混放置',
+          '神恩token放置'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '建造金字塔：消耗资源，提供持续收益',
+          '祭祀：消耗资源获得神恩',
+          '神恩：特殊能力或资源'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        endGame: [
+          '金字塔完成奖励',
+          '神恩收集奖励',
+          '祭祀次数奖励'
+        ]
+      }
+    },
+    tips: [
+      '金字塔是长期投资',
+      '祭祀要把握时机',
+      '神恩能力要充分利用'
+    ]
+  },
+  {
+    id: 'is-mayans',
+    gameId: 'imperial-settlers',
+    name: '帝国建筑师：玛雅',
+    nameEn: 'Imperial Settlers: Mayans',
+    shortDesc: '新增玛雅文明、历法和天文台机制',
+    description: '玛雅文明加入！新增玛雅文明、历法系统和天文台机制。历法提供周期性奖励，天文台可以预测未来。',
+    image: '/images/imperial-settlers.jpg',
+    playerCount: '1-4人',
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '选择玛雅文明',
+          '历法轨道放置',
+          '天文台建造区域',
+          '预言卡洗混放置'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '推进历法：获得周期性奖励',
+          '建造天文台：预测未来事件',
+          '使用预言：提前准备'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        endGame: [
+          '历法推进奖励',
+          '天文台完成奖励',
+          '预言准确奖励'
+        ]
+      }
+    },
+    tips: [
+      '历法奖励周期性出现',
+      '天文台预测要准确',
+      '预言要提前准备'
+    ]
+  },
+  {
+    id: 'si-branch-claw',
+    gameId: 'spirit-island',
+    name: '灵迹岛：分支与利爪',
+    nameEn: 'Spirit Island: Branch & Claw',
+    shortDesc: '新增事件卡、危险地形和野兽token',
+    description: '自然之力增强！新增事件卡带来随机事件，危险地形增加挑战，野兽token可以协助灵体战斗。',
+    image: '/images/spirit-island.jpg',
+    playerCount: '1-4人（基础1-4人不变）',
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '事件卡洗混放置',
+          '危险地形token放置',
+          '野兽token放入袋中',
+          '事件卡每回合触发'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '处理事件：随机事件影响游戏',
+          '利用危险地形：策略性放置',
+          '召唤野兽：协助战斗'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        endGame: [
+          '事件处理奖励',
+          '野兽协助奖励',
+          '危险地形利用奖励'
+        ]
+      }
+    },
+    tips: [
+      '事件卡带来不确定性',
+      '危险地形可以策略利用',
+      '野兽是强力盟友'
+    ]
+  },
+  {
+    id: 'si-jagged-earth',
+    gameId: 'spirit-island',
+    name: '灵迹岛：锯齿大地',
+    nameEn: 'Spirit Island: Jagged Earth',
+    shortDesc: '新增10个灵体、新岛屿和更复杂的机制',
+    description: '灵体大军扩充！新增10个全新灵体、新岛屿版图和更复杂的游戏机制。新灵体拥有独特能力，新岛屿带来更多挑战。',
+    image: '/images/spirit-island.jpg',
+    playerCount: '1-6人（基础1-4人扩展到6人）',
+    setup: [
+      {
+        playerCount: '1-6人',
+        steps: [
+          '选择新灵体（共10个新灵体）',
+          '使用新岛屿版图',
+          '新机制token放置',
+          '扩展支持6人游戏'
+        ]
+      }
+    ],
+    turnActions: {
+      additions: {
+        onYourTurn: [
+          '新灵体能力：独特且强大',
+          '新岛屿机制：更复杂的互动',
+          '新策略：更多选择'
+        ]
+      }
+    },
+    scoring: {
+      additions: {
+        endGame: [
+          '新灵体特殊奖励',
+          '新岛屿探索奖励',
+          '新机制掌握奖励'
+        ]
+      }
+    },
+    tips: [
+      '新灵体能力独特',
+      '新岛屿挑战更大',
+      '扩展支持6人游戏'
+    ]
   }
 ]

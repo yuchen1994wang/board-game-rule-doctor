@@ -2099,21 +2099,21 @@ export const games: GameRule[] = [
     id: 'love-letter',
     name: '情书',
     nameEn: 'Love Letter',
-    description: 'Seiji Kanai经典情书传递桌游',
-    playerCount: '2-4人',
+    description: 'Seiji Kanai经典情书传递桌游（6人扩展版）',
+    playerCount: '2-6人',
     weight: 1.3,
-    background: '《情书》是由 Seiji Kanai 设计的经典微卡牌游戏，于2012年出版。游戏背景设定在宫廷中，玩家扮演追求者，试图将情书送到公主手中。游戏机制极简但策略深度足够：每位玩家只有2张手牌，通过打出卡牌来影响其他玩家，保护自己的情书。包含16张卡牌，每张都有独特的能力。作为史上最受欢迎的微卡牌游戏之一，它以其极简规则、深度策略、便携性和重玩价值著称，被誉为"现代桌游入门三杰"之一，适合各种玩家群体。',
+    background: '《情书》是由 Seiji Kanai 设计的经典微卡牌游戏，于2012年出版。游戏背景设定在宫廷中，玩家扮演追求者，试图将情书送到公主手中。游戏机制极简但策略深度足够：每位玩家只有2张手牌，通过打出卡牌来影响其他玩家，保护自己的情书。本版本包含32张扩展卡牌（含6人扩展），支持2-6人游戏。作为史上最受欢迎的微卡牌游戏之一，它以其极简规则、深度策略、便携性和重玩价值著称，被誉为"现代桌游入门三杰"之一，适合各种玩家群体。',
     image: '/images/love-letter.jpg',
     hasExpansions: true,
     category: ['聚会', '抽象'],
     mechanism: ['手牌管理', '推理', '淘汰'],
     setup: [
       {
-        playerCount: '2-4人',
+        playerCount: '2-6人',
         steps: [
-          '洗混16张卡牌',
+          '洗混32张卡牌（含扩展牌）',
           '每位玩家获得1张起始手牌',
-          '将1张牌面朝下放在一边（2人时2张）',
+          '将1张牌面朝下放在一边（2人时移除3张并公开）',
           '剩余牌堆作为牌库',
           '决定起始玩家'
         ]
@@ -2137,35 +2137,39 @@ export const games: GameRule[] = [
     ],
     scoring: {
       duringGame: [
-        '赢得一轮获得1个爱情token'
+        '赢得一轮获得1个好感指示物'
       ],
       endGame: [
-        '根据玩家数量，先获得一定数量token的玩家获胜',
+        '根据玩家数量，先获得一定数量指示物的玩家获胜',
         '2人：7个',
         '3人：5个',
-        '4人：4个'
+        '4人：4个',
+        '5人：4个',
+        '6人：3个'
       ]
     },
     tips: [
-      '游戏支持2-4人',
-      '只有16张卡',
+      '游戏支持2-6人（含扩展）',
+      '标准版16张卡，扩展版32张卡',
       '推理很重要',
       '游戏时长约10-20分钟',
       '便携易上手',
       '现代桌游入门经典之一'
     ],
     tokens: [
-      { name: '爱情token', description: '赢得一轮的标记' }
+      { name: '好感指示物', description: '赢得一轮的标记' }
     ],
     cards: [
-      { name: '卫兵', count: 5, description: '猜测一位玩家手牌，若正确则该玩家出局' },
-      { name: '神父', count: 2, description: '查看一位玩家手牌' },
-      { name: '男爵', count: 2, description: '与一位玩家比手牌点数，小者出局' },
-      { name: '侍女', count: 2, description: '直到自己下回合前免疫其他卡牌效果' },
-      { name: '王子', count: 2, description: '一位玩家（可自己）弃掉手牌重抽' },
-      { name: '国王', count: 1, description: '与一位玩家交换手牌' },
-      { name: '伯爵夫人', count: 1, description: '若手牌有国王或王子必须打出，无效果' },
-      { name: '公主', count: 1, description: '若打出或弃掉则立即出局' }
+      { name: '刺客', count: 1, description: '当你成为侍卫目标时，打出侍卫的玩家淘汰，你弃置此卡并重抽' },
+      { name: '弄臣', count: 1, description: '选择一名玩家，若本轮其胜出，你也获得1个指示物' },
+      { name: '侍卫', count: 3, description: '猜测一位玩家手牌（不能猜侍卫），若正确则该玩家出局' },
+      { name: '红衣主教', count: 2, description: '选择两名玩家互换，查看其中一人的手牌' },
+      { name: '男爵夫人', count: 2, description: '查看另一名或两名玩家的手牌' },
+      { name: '谄媚者', count: 2, description: '选定一名玩家，使其成为下一张牌必须指定的目标' },
+      { name: '伯爵', count: 2, description: '若此牌在本轮结束时在你的弃牌堆，结算点数+1' },
+      { name: '警察', count: 1, description: '若此牌在你淘汰时在你的弃牌堆，你获得1个指示物' },
+      { name: '太后', count: 1, description: '与一位玩家比手牌点数，较大者出局' },
+      { name: '主教', count: 1, description: '猜测一位玩家手牌，若正确你获得1个指示物；被指定玩家可选择弃牌重抽。结算时视为7.5点' }
     ]
   },
   {
