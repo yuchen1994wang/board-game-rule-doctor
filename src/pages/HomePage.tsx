@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Search, Package, Globe } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { Search, Package, Globe, Users, Scale } from 'lucide-react'
 import { games } from '@/data/games'
 import ExpansionModal from '@/components/ExpansionModal'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -36,6 +37,7 @@ export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedGame, setSelectedGame] = useState<string | null>(null)
   const { language, toggleLanguage, t } = useLanguage()
+  const navigate = useNavigate()
 
   const filteredGames = games.filter(game =>
     game.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -47,7 +49,7 @@ export default function HomePage() {
     if (game?.hasExpansions) {
       setSelectedGame(gameId)
     } else {
-      window.location.href = `/rule/${gameId}`
+      navigate(`/rule/${gameId}`)
     }
   }
 
@@ -161,6 +163,20 @@ export default function HomePage() {
                           {mech}
                         </span>
                       ))}
+                    </div>
+                    <div className="flex items-center gap-3 mt-1.5">
+                      {game.playerCount && (
+                        <span className="inline-flex items-center gap-1 text-xs text-[#1a4731]/60">
+                          <Users className="w-3 h-3" />
+                          {game.playerCount}
+                        </span>
+                      )}
+                      {game.weight && (
+                        <span className="inline-flex items-center gap-1 text-xs text-[#1a4731]/60">
+                          <Scale className="w-3 h-3" />
+                          BGG {game.weight.toFixed(1)}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>

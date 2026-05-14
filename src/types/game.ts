@@ -72,6 +72,8 @@ export interface GameRule {
   cards?: CardReference[];
   roundPhases?: RoundPhase[];
   background?: string;
+  playerCount?: string;
+  weight?: number;
 }
 
 export interface ExpansionSetup extends GameSetup {

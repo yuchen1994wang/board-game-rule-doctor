@@ -323,13 +323,6 @@ export default function RuleCardPage() {
           </div>
           <p className="text-[#1a4731]/70">{language === 'zh' ? game.description : game.nameEn}</p>
           
-          {game.background && (
-            <div className="mt-4 p-4 bg-[#1a4731]/5 rounded-lg border border-[#1a4731]/10">
-              <h3 className="text-sm font-semibold text-[#1a4731] mb-2">{t('游戏背景', 'Game Background')}</h3>
-              <p className="text-sm text-[#1a4731]/70 leading-relaxed">{game.background}</p>
-            </div>
-          )}
-          
           {enabledExpansions.length > 0 && (
             <div className="flex items-center gap-2 mt-3 flex-wrap">
               <span className="text-sm text-[#1a4731]/60">已选扩展：</span>
@@ -388,6 +381,12 @@ export default function RuleCardPage() {
         <div className="space-y-6">
           {activeTab === 'setup' && (
             <>
+              {game.background && (
+                <RuleSection title={t('游戏背景', 'Game Background')} icon={Globe}>
+                  <p className="text-sm text-[#1a4731]/80 leading-relaxed">{game.background}</p>
+                </RuleSection>
+              )}
+
               <RuleSection title={t('游戏设置', 'Game Setup')} icon={Settings}>
                 <SetupSection setups={combinedSetup} />
               </RuleSection>
