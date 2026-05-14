@@ -211,9 +211,9 @@ export const games: GameRule[] = [
       { name: '市场标记', description: '放置在市场需求区，用于出售货物获得收入' }
     ],
     cards: [
-      { name: '工业卡', count: 54, description: '包含所有工业建筑（煤、铁、港口等）', value: 1 },
-      { name: '商船卡', count: 14, description: '运河时代和铁路时代的远距离运输', value: 2 },
-      { name: '远见卡', count: 16, description: '玩家手牌，影响资源和建设策略', value: 3 }
+      { name: '工业卡', count: 54, category: '工业牌', description: '包含所有工业建筑（煤、铁、港口等）', value: 1 },
+      { name: '商船卡', count: 14, category: '运输牌', description: '运河时代和铁路时代的远距离运输', value: 2 },
+      { name: '远见卡', count: 16, category: '手牌', description: '玩家手牌，影响资源和建设策略', value: 3 }
     ]
   },
   {
@@ -449,8 +449,8 @@ export const games: GameRule[] = [
       { name: '水塘', description: '中央区域，玩家暗自打出卡牌决定每轮植物性食物总量' }
     ],
     cards: [
-      { name: '特性卡', count: 129, description: '包含所有生物特性（攻击、防御、食性等）', value: 1 },
-      { name: '食物卡', count: 24, description: '用于喂养物种的食物供应', value: 2 }
+      { name: '特性卡', count: 129, category: '特性牌', description: '包含所有生物特性（攻击、防御、食性等）', value: 1 },
+      { name: '食物卡', count: 24, category: '食物牌', description: '用于喂养物种的食物供应', value: 2 }
     ]
   },
   {
@@ -542,8 +542,8 @@ export const games: GameRule[] = [
       { name: '船只', description: '用于运送货物到欧洲获得VP，有不同容量的船只' }
     ],
     cards: [
-      { name: '建筑卡', count: 56, description: '包含种植园（玉米/靛蓝/糖/烟草/咖啡）和大型建筑', value: 1 },
-      { name: '角色卡', count: 7, description: '选择器面板：定居者、船长、商人、工匠、船长、矿工、建筑师', value: 2 }
+      { name: '建筑卡', count: 56, category: '建筑牌', description: '包含种植园（玉米/靛蓝/糖/烟草/咖啡）和大型建筑', value: 1 },
+      { name: '角色卡', count: 7, category: '角色牌', description: '选择器面板：定居者、船长、商人、工匠、船长、矿工、建筑师', value: 2 }
     ]
   },
   {
@@ -624,8 +624,8 @@ export const games: GameRule[] = [
       { name: '资源token', description: '各种资源（木材/石材/金币等），用于建造和升级' }
     ],
     cards: [
-      { name: '文明卡', count: 24, description: '提供文化和金钱奖励的特殊卡牌', value: 1 },
-      { name: '地形卡', count: 48, description: '用于构建地形的板块', value: 2 }
+      { name: '文明卡', count: 24, category: '文明牌', description: '提供文化和金钱奖励的特殊卡牌', value: 1 },
+      { name: '地形卡', count: 48, category: '地形牌', description: '用于构建地形的板块', value: 2 }
     ]
   },
   {
@@ -711,9 +711,9 @@ export const games: GameRule[] = [
       { name: 'MC货币', description: 'MegaCredit，游戏主要货币，用于支付项目费用' }
     ],
     cards: [
-      { name: '项目卡', count: 208, description: '蓝色项目卡（标准版）', value: 1 },
-      { name: '公司卡', count: 10, description: '起始公司特殊能力', value: 2 },
-      { name: 'Prelude卡', count: 56, description: '需要Prelude扩', value: 3 }
+      { name: '项目卡', count: 208, category: '项目牌', description: '蓝色项目卡（标准版）', value: 1 },
+      { name: '公司卡', count: 10, category: '公司牌', description: '起始公司特殊能力', value: 2 },
+      { name: 'Prelude卡', count: 56, category: '序章牌', description: '需要Prelude扩', value: 3 }
     ]
   },
   {
@@ -793,7 +793,7 @@ export const games: GameRule[] = [
       { name: '省份图腾', description: '控制完整省份后获得的奖励标记，终局计2分' }
     ],
     cards: [
-      { name: '商队卡', count: 65, description: ' colonists移民、先驱者、商人、建筑师、Settlers定居者等', value: 1 }
+      { name: '商队卡', count: 65, category: '商队牌', description: ' colonists移民、先驱者、商人、建筑师、Settlers定居者等', value: 1 }
     ]
   },
   {
@@ -870,7 +870,7 @@ export const games: GameRule[] = [
       { name: '资金token', description: '玩家的货币，用于拍卖出价购买画作' }
     ],
     cards: [
-      { name: '名画卡', count: 60, description: '5位艺术家各12张：Ovan O Beka、Lars Lise、Antoine Vilms、Claire Bishop、Heidi Hayes', value: 1 }
+      { name: '名画卡', count: 60, category: '名画牌', description: '5位艺术家各12张：Ovan O Beka、Lars Lise、Antoine Vilms、Claire Bishop、Heidi Hayes', value: 1 }
     ]
   },
   {
@@ -1033,8 +1033,8 @@ export const games: GameRule[] = [
       { name: '金币', description: '游戏货币，用于购买资源、改变骰子和支付费用' }
     ],
     cards: [
-      { name: '事件卡', count: 24, description: '影响骰子和行动的随机事件', value: 1 },
-      { name: '女士卡', count: 9, description: '需要女士扩，提供独特能力和终局计分', value: 2 }
+      { name: '事件卡', count: 24, category: '事件牌', description: '影响骰子和行动的随机事件', value: 1 },
+      { name: '女士卡', count: 9, category: '女士牌', description: '需要女士扩，提供独特能力和终局计分', value: 2 }
     ]
   },
   {
@@ -1116,8 +1116,8 @@ export const games: GameRule[] = [
       { name: '分数标记', description: '追踪玩家当前得分，在分数轨道上移动' }
     ],
     cards: [
-      { name: '目标卡', count: 16, description: '8张公共目标卡和8张私人目标卡', value: 1 },
-      { name: '工具卡', count: 6, description: '特殊行动能力', value: 2 }
+      { name: '目标卡', count: 16, category: '目标牌', description: '8张公共目标卡和8张私人目标卡', value: 1 },
+      { name: '工具卡', count: 6, category: '工具牌', description: '特殊行动能力', value: 2 }
     ]
   },
   {
@@ -1200,8 +1200,8 @@ export const games: GameRule[] = [
       { name: '森林版图', description: '中央区域，玩家从中收集龙蛋和资源' }
     ],
     cards: [
-      { name: '龙牌', count: 83, description: '红龙、翡翠龙、金龙、蓝龙、紫龙等5种颜色', value: 1 },
-      { name: '巢穴卡', count: 42, description: '提供龙能力增强的特殊卡', value: 2 }
+      { name: '龙牌', count: 83, category: '龙牌', description: '红龙、翡翠龙、金龙、蓝龙、紫龙等5种颜色', value: 1 },
+      { name: '巢穴卡', count: 42, category: '巢穴牌', description: '提供龙能力增强的特殊卡', value: 2 }
     ]
   },
   {
@@ -1970,8 +1970,8 @@ export const games: GameRule[] = [
       { name: '金币', description: '游戏货币' }
     ],
     cards: [
-      { name: '装备卡', count: 24, description: '各种淘金装备', value: 1 },
-      { name: '事件卡', count: 16, description: '随机事件', value: 2 }
+      { name: '装备卡', count: 24, category: '装备牌', description: '各种淘金装备', value: 1 },
+      { name: '事件卡', count: 16, category: '事件牌', description: '随机事件', value: 2 }
     ]
   },
 
