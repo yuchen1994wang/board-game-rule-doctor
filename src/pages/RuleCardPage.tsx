@@ -1,10 +1,11 @@
 import { useMemo, useEffect } from 'react'
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
-import { ArrowLeft, Users, PlayCircle, PauseCircle, Trophy, Target, Lightbulb, Settings, AlertTriangle, Package, ChevronDown, ChevronUp, Globe, Hexagon, Layers, LayoutGrid } from 'lucide-react'
+import { ArrowLeft, Users, PlayCircle, PauseCircle, Trophy, Target, Lightbulb, Settings, AlertTriangle, Package, ChevronDown, ChevronUp, Globe, Hexagon, Layers, LayoutGrid, Flag } from 'lucide-react'
 import { useState } from 'react'
 import { games } from '@/data/games'
 import { expansions } from '@/data/expansions'
 import { useLanguage } from '@/contexts/LanguageContext'
+import RuleFeedbackModal from '@/components/RuleFeedbackModal'
 import type { Expansion, GameSetup } from '@/types/game'
 
 function RuleSection({ 
@@ -99,6 +100,7 @@ export default function RuleCardPage() {
   const navigate = useNavigate()
   const { language, toggleLanguage, t } = useLanguage()
   const [activeTab, setActiveTab] = useState<TabKey>('setup')
+  const [showFeedback, setShowFeedback] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -247,13 +249,22 @@ export default function RuleCardPage() {
             <ArrowLeft className="w-5 h-5" />
             <span>{t('返回首页', 'Back to Home')}</span>
           </button>
-          <button
-            onClick={toggleLanguage}
-            className="flex items-center gap-1 px-3 py-1.5 bg-white rounded-lg border-2 border-[#1a4731]/20 hover:border-[#1a4731]/40 transition-colors text-sm text-[#1a4731]"
-          >
-            <Globe className="w-4 h-4" />
-            {language === 'zh' ? 'EN' : '中文'}
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowFeedback(true)}
+              className="flex items-center gap-1 px-3 py-1.5 bg-white rounded-lg border-2 border-amber-200 hover:border-amber-400 transition-colors text-sm text-amber-700"
+            >
+              <Flag className="w-4 h-4" />
+              {language === 'zh' ? '规则纠错' : 'Feedback'}
+            </button>
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-1 px-3 py-1.5 bg-white rounded-lg border-2 border-[#1a4731]/20 hover:border-[#1a4731]/40 transition-colors text-sm text-[#1a4731]"
+            >
+              <Globe className="w-4 h-4" />
+              {language === 'zh' ? 'EN' : '中文'}
+            </button>
+          </div>
         </div>
 
         <header className="mb-8">
@@ -599,6 +610,14 @@ export default function RuleCardPage() {
             </>
           )}
         </div>
+
+        {showFeedback && (
+          <RuleFeedbackModal
+            gameId={game.id}
+            gameName={language === 'zh' ? game.name : game.nameEn}
+            onClose={() => setShowFeedback(false)}
+          />
+        )}
       </div>
     </div>
   )
