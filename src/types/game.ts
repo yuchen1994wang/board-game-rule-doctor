@@ -32,7 +32,7 @@ export interface ScoringAdditions {
 
 export type GameCategory = '德式' | '美式' | '聚会' | '合作' | '抽象';
 
-export type GameMechanism = '工人放置' | '骰子驱动' | '引擎构筑' | '拍卖' | '卡牌驱动' | '板块放置' | '手牌管理' | '资源管理' | '区域控制' | '合作' | '轮抽' | '谈判' | '路线规划' | '网格移动' | '拼图' | '记忆' | '反应';
+export type GameMechanism = '工人放置' | '骰子驱动' | '引擎构筑' | '拍卖' | '卡牌驱动' | '板块放置' | '手牌管理' | '资源管理' | '区域控制' | '合作' | '轮抽' | '谈判' | '路线规划' | '网格移动' | '拼图' | '记忆' | '反应' | '策略' | '战斗' | '卡牌管理' | '探索' | '派对' | '推理' | '淘汰';
 
 export interface TokenReference {
   name: string;

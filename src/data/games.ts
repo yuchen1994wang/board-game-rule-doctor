@@ -1203,5 +1203,2812 @@ export const games: GameRule[] = [
       { name: '龙牌', count: 83, description: '红龙、翡翠龙、金龙、蓝龙、紫龙等5种颜色' },
       { name: '巢穴卡', count: 42, description: '提供龙能力增强的特殊卡' }
     ]
+  },
+  {
+    id: 'le-havre',
+    name: '港都情浓',
+    nameEn: 'Le Havre',
+    description: 'Uwe Rosenberg经典资源管理与船运策略桌游',
+    playerCount: '1-5人',
+    weight: 3.9,
+    background: '《港都情浓》是由 Uwe Rosenberg 设计的经典德式策略游戏，于2008年出版。游戏背景设定在法国海港城市勒阿弗尔，玩家扮演港口商人，通过收集和加工各种资源、建造建筑、发展船运业来获取财富。游戏的核心机制是资源管理和工人放置，玩家需要在多个回合中平衡收入和支出，积累财富。游戏共有14个回合，每个回合分为两个阶段：行动阶段和供给阶段，玩家需要购买或建造建筑、加工资源、获取食物、借贷等。作为 Uwe Rosenberg 的经典作品之一，它以其深度策略、资源管理和经济模拟著称，适合喜欢深度策略游戏的玩家。',
+    image: '/images/le-havre.jpg',
+    hasExpansions: true,
+    category: ['德式'],
+    mechanism: ['工人放置', '资源管理', '引擎构筑'],
+    setup: [
+      {
+        playerCount: '1-5人',
+        steps: [
+          '摆放主游戏板',
+          '放置建筑和船只卡片',
+          '每位玩家选择一个颜色',
+          '放置起始资源',
+          '洗混资源卡片',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '放置自己的工人到建筑上',
+        '执行建筑行动（获得资源、加工等）',
+        '建造新建筑（支付费用）',
+        '购买船只',
+        '支付食物费用',
+        '借贷（可选）'
+      ],
+      outsideYourTurn: [
+        '观察其他玩家的建筑布局',
+        '注意资源价格变动',
+        '计算食物需求',
+        '预判对手的行动'
+      ]
+    },
+    endConditions: [
+      '进行14个回合后游戏结束',
+      '最后一回合结束后进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '建筑提供即时资源和分数',
+        '船运货物获得金币',
+        '加工资源获得利润'
+      ],
+      endGame: [
+        '每艘船只的分数',
+        '每座建筑的分数',
+        '每枚金币1分',
+        '贷款扣1分每枚',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-5人，有单人模式',
+      '共有14个回合',
+      '食物管理很关键',
+      '建筑和船只需要平衡发展',
+      '可以借贷但终局扣分',
+      '游戏时长约60-120分钟',
+      'Uwe Rosenberg经典作品之一'
+    ],
+    tokens: [
+      { name: '工人token', description: '玩家的工人，放置到建筑上执行行动' },
+      { name: '资源token', description: '各种资源（木材、粘土、铁、煤、谷物、皮革等）' },
+      { name: '建筑卡', description: '各种建筑，提供不同的行动和能力' },
+      { name: '船只卡', description: '各种船只，用于运输货物获得分数' },
+      { name: '金币', description: '游戏货币，用于建造和购买' },
+      { name: '食物token', description: '每回合需要支付的食物，维持工人生存' }
+    ]
+  },
+  {
+    id: 'carcassonne',
+    name: '卡卡颂3.0（大盒版）',
+    nameEn: 'Carcassonne',
+    description: '经典板块放置与区域控制策略桌游',
+    playerCount: '2-6人',
+    weight: 1.9,
+    background: '《卡卡颂》是由 Klaus-Jürgen Wrede 设计的经典板块放置策略游戏，于2000年出版。游戏背景设定在法国南部的卡卡颂地区，玩家通过放置地形板块来扩展版图，放置随从米宝到道路、城市、修道院或草地上来获得分数。游戏机制简单但策略深度足够：每回合放置一块地形板块，然后可以放置一个随从，完成的区域获得分数。2021年推出的3.0大盒版包含了多个扩展，增加了更多元素。作为德式桌游入门级经典，它以其简单的规则、多变的策略和家庭友好的特点著称，被誉为"现代桌游入门三杰"之一，适合新老玩家。',
+    image: '/images/carcassonne.jpg',
+    hasExpansions: true,
+    category: ['德式', '抽象'],
+    mechanism: ['板块放置', '区域控制'],
+    setup: [
+      {
+        playerCount: '2-6人',
+        steps: [
+          '摆放起始板块',
+          '洗混所有地形板块',
+          '每位玩家选择颜色并拿取米宝',
+          '决定起始玩家',
+          '放置分数标记'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '抽取一张地形板块',
+        '放置板块到合法位置',
+        '可以放置一个米宝到新板块',
+        '检查并计分完成的区域',
+        '将完成区域的米宝返回玩家'
+      ],
+      outsideYourTurn: [
+        '观察其他玩家的米宝位置',
+        '注意关键区域的完成度',
+        '预判对手的板块放置',
+        '规划自己的区域发展'
+      ]
+    },
+    endConditions: [
+      '当所有地形板块放置完毕后游戏结束',
+      '终局时对未完成区域进行计分'
+    ],
+    scoring: {
+      duringGame: [
+        '完成城市获得分数（每块2分+徽章2分）',
+        '完成道路获得分数（每块1分）',
+        '完成修道院获得分数（9分）'
+      ],
+      endGame: [
+        '未完成城市计每块1分',
+        '未完成道路计每块1分',
+        '未完成修道院按邻接板块计分',
+        '草地按城市计分',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-6人',
+      '板块放置必须边对边匹配',
+      '米宝放置后不能移动',
+      '大盒版包含多个扩展',
+      '游戏时长约30-45分钟',
+      '现代桌游入门经典之一'
+    ],
+    tokens: [
+      { name: '地形板块', description: '包含道路、城市、草地、修道院等地形的板块' },
+      { name: '米宝', description: '玩家的随从，放置到板块上占据区域' },
+      { name: '分数标记', description: '在分数轨道上追踪玩家得分' }
+    ]
+  },
+  {
+    id: 'gotown',
+    name: '摩天大楼（2017）',
+    nameEn: 'Gotown',
+    description: '卡牌驱动的城市建设与手牌管理策略桌游',
+    playerCount: '2-4人',
+    weight: 2.2,
+    background: '《摩天大楼》是由 Mac Gerdts 设计的城市建设策略游戏，于2017年出版。游戏中玩家扮演城市规划师，通过卡牌来建设各种建筑，发展城市。游戏机制融合了手牌管理、资源管理和建筑放置，玩家需要平衡不同类型的建筑以获得最大分数。建筑分为住宅、商业、工业和公共设施等类型，不同组合提供不同的分数加成。作为一款中等重量的策略游戏，它以其简洁的规则和深度的策略著称，适合喜欢城市建设主题的玩家。',
+    image: '/images/gotown.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['手牌管理', '资源管理', '板块放置'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放游戏板',
+          '洗混建筑卡牌',
+          '每位玩家拿取起始手牌',
+          '放置资源token',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '打出卡牌执行行动',
+        '获取资源',
+        '建造建筑',
+        '升级建筑',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的建筑布局',
+        '注意卡牌组合',
+        '规划自己的发展路线'
+      ]
+    },
+    endConditions: [
+      '当建筑卡牌耗尽时游戏结束',
+      '或者当所有建筑位置填满时结束'
+    ],
+    scoring: {
+      duringGame: [
+        '建造建筑获得即时分数',
+        '建筑组合提供额外分数'
+      ],
+      endGame: [
+        '所有建筑的总分',
+        '特定建筑组合的加分',
+        '剩余资源换算分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '建筑类型平衡很重要',
+      '手牌管理是关键',
+      '游戏时长约30-45分钟'
+    ],
+    tokens: [
+      { name: '建筑卡牌', description: '各种建筑类型的卡牌' },
+      { name: '资源token', description: '用于建造建筑的资源' },
+      { name: '建筑板块', description: '放置到游戏板上的建筑' }
+    ]
+  },
+  {
+    id: 'moon-adventure',
+    name: '月面探险',
+    nameEn: 'Moon Adventure',
+    description: '合作类太空探索与团队协调桌游',
+    playerCount: '2-5人',
+    weight: 2.5,
+    background: '《月面探险》是由 Jun Sasaki 设计的合作类太空探索游戏，于2021年由 Oink Games 出版，属于 Oink 小盒系列作品。游戏背景设定在月球基地，玩家作为宇航员团队需要在氧气耗尽前完成任务并安全返回地球。游戏机制融合了团队合作、手牌管理和行动协调，每位玩家有独特的能力，需要密切配合。作为 Oink Games 系列作品之一，它以其紧张刺激的合作体验、精美的组件和适中的难度著称，适合喜欢合作游戏的玩家。',
+    image: '/images/moon-adventure.jpg',
+    hasExpansions: false,
+    category: ['聚会', '合作'],
+    mechanism: ['手牌管理', '合作'],
+    setup: [
+      {
+        playerCount: '2-5人',
+        steps: [
+          '摆放月球基地游戏板',
+          '放置氧气和任务token',
+          '每位玩家选择角色',
+          '拿取角色卡牌和起始手牌',
+          '洗混事件卡',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '打出卡牌执行行动',
+        '移动到不同舱室',
+        '执行任务',
+        '收集氧气',
+        '修复设备',
+        '与队友配合'
+      ],
+      outsideYourTurn: [
+        '与队友沟通策略',
+        '注意氧气剩余量',
+        '协调行动顺序',
+        '准备应对事件'
+      ]
+    },
+    endConditions: [
+      '成功完成所有任务并返回地球 → 胜利！',
+      '氧气耗尽 → 失败！',
+      '任务失败 → 失败！'
+    ],
+    scoring: {
+      duringGame: [
+        '完成任务获得成就感',
+        '团队合作获得满足'
+      ],
+      endGame: [
+        '如果成功完成任务，团队胜利',
+        '如果失败，总结经验重新开始'
+      ]
+    },
+    tips: [
+      '游戏支持2-5人，合作游戏',
+      '沟通和配合是胜利关键',
+      '每位角色有独特能力',
+      '氧气管理很重要',
+      '游戏时长约30-45分钟',
+      'Oink Games小盒系列作品'
+    ],
+    tokens: [
+      { name: '角色卡牌', description: '每位玩家的独特角色能力卡' },
+      { name: '氧气token', description: '团队剩余氧气量' },
+      { name: '任务token', description: '需要完成的任务标记' },
+      { name: '事件卡', description: '随机发生的事件' }
+    ]
+  },
+  {
+    id: 'nine-tiles-panic',
+    name: '九格恐慌',
+    nameEn: 'Nine Tiles Panic',
+    description: 'Oink Games快速反应与图案匹配桌游',
+    playerCount: '2-5人',
+    weight: 1.5,
+    background: '《九格恐慌》是由 大野 友章 设计的快速反应类游戏，于2019年由 Oink Games 出版，属于 Oink 小盒系列作品。游戏使用9块双面板块，每块有不同的图案和颜色。玩家需要快速将板块排列成符合目标卡要求的图案。游戏机制融合了快速反应、空间推理和图案匹配，规则简单但节奏快，充满紧张感。作为 Oink Games 系列中最轻量的作品之一，它以其简单上手、节奏快和趣味性著称，适合各种聚会场合，是破冰暖场的绝佳选择。',
+    image: '/images/nine-tiles-panic.jpg',
+    hasExpansions: false,
+    category: ['聚会'],
+    mechanism: ['反应', '拼图'],
+    setup: [
+      {
+        playerCount: '2-5人',
+        steps: [
+          '摆放9块板块',
+          '洗混目标卡',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '翻开一张目标卡',
+        '快速观察目标图案',
+        '迅速移动板块',
+        '翻转板块调整图案',
+        '第一个完成的玩家按铃'
+      ],
+      outsideYourTurn: [
+        '也在同时拼图案',
+        '观察对手的进度',
+        '快速反应争先完成'
+      ]
+    },
+    endConditions: [
+      '当一位玩家获得足够分数后游戏结束',
+      '或者目标卡用完时结束'
+    ],
+    scoring: {
+      duringGame: [
+        '最快完成的玩家获得分数',
+        '其他玩家根据完成顺序得分'
+      ],
+      endGame: [
+        '分数最高的玩家获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-5人',
+      '节奏快，反应是关键',
+      '板块是双面的',
+      '游戏时长约15-20分钟',
+      'Oink Games小盒系列',
+      '适合聚会破冰'
+    ],
+    tokens: [
+      { name: '九块板块', description: '双面的图案板块' },
+      { name: '目标卡', description: '需要完成的目标图案' },
+      { name: '铃铛', description: '完成后按铃示意' }
+    ]
+  },
+  {
+    id: 'startups',
+    name: '新创公司',
+    nameEn: 'Startups',
+    description: 'Oink Games创业投资与风险评估桌游',
+    playerCount: '3-7人',
+    weight: 1.8,
+    background: '《新创公司》是由 Takashi Saito 设计的投资策略游戏，于2017年由 Oink Games 出版，属于 Oink 小盒系列作品。游戏中玩家扮演风险投资家，投资各种初创公司，但要注意有些公司是陷阱！每位玩家手中有一张公司牌自己看不到但别人能看到，需要通过他人的反应来判断。游戏机制融合了心理博弈、风险评估和投资策略，玩家需要在适当的时机投资或撤资。作为 Oink Games 系列中非常受欢迎的作品之一，它以其简单的规则、深度的心理博弈和趣味性著称，适合聚会和家庭游戏。',
+    image: '/images/startups.jpg',
+    hasExpansions: false,
+    category: ['聚会'],
+    mechanism: ['手牌管理', '谈判'],
+    setup: [
+      {
+        playerCount: '3-7人',
+        steps: [
+          '洗混公司卡牌',
+          '每位玩家拿取一张公司卡放到支架上（背对自己）',
+          '每位玩家获得起始资金',
+          '放置投资标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '观察其他玩家的公司卡',
+        '决定是否投资',
+        '放置投资标记',
+        '可以选择撤资',
+        '观察他人反应来推断自己的公司'
+      ],
+      outsideYourTurn: [
+        '观察对手的投资决策',
+        '通过表情误导对手',
+        '推断自己的公司类型'
+      ]
+    },
+    endConditions: [
+      '当所有投资回合结束后游戏结算',
+      '公司价值揭晓，计算每位投资者的收益'
+    ],
+    scoring: {
+      duringGame: [
+        '投资成功的公司获得回报',
+        '投资陷阱公司损失资金'
+      ],
+      endGame: [
+        '计算总资金',
+        '资金最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持3-7人',
+      '自己的公司卡自己看不到',
+      '心理博弈很重要',
+      '风险与收益并存',
+      '游戏时长约20-30分钟',
+      'Oink Games经典作品'
+    ],
+    tokens: [
+      { name: '公司卡', description: '各种初创公司，有些是陷阱' },
+      { name: '卡片支架', description: '放置公司卡，背对玩家自己' },
+      { name: '投资标记', description: '玩家的投资token' },
+      { name: '资金token', description: '玩家的资金' }
+    ]
+  },
+  {
+    id: 'trajan',
+    name: '图拉真',
+    nameEn: 'Trajan',
+    description: 'Stefan Feld经典罗马主题策略桌游',
+    playerCount: '2-4人',
+    weight: 3.8,
+    background: '《图拉真》是由 Stefan Feld 设计的经典德式策略游戏，于2011年出版。游戏背景设定在古罗马帝国图拉真皇帝统治时期，玩家扮演罗马贵族，通过发展政治、军事、经济和文化来获得声望。游戏的核心机制是 Stefan Feld 标志性的"行动轮盘"系统：玩家通过移动轮盘上的标记来选择行动，每个行动有不同的效果。游戏包含多个发展方向：军事、建筑、商业、政治等，玩家需要平衡发展。作为 Stefan Feld 的代表作之一，它以其创新的轮盘机制、深度策略和多路线发展著称，适合喜欢中重度策略游戏的玩家。',
+    image: '/images/trajan.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['工人放置', '资源管理', '引擎构筑'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放游戏板',
+          '放置轮盘标记',
+          '每位玩家拿取起始资源和工人',
+          '洗混各种卡牌',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '移动轮盘上的标记',
+        '执行对应行动',
+        '获得资源',
+        '建造建筑',
+        '发展军事',
+        '获取政治影响力',
+        '收集商人卡片'
+      ],
+      outsideYourTurn: [
+        '观察轮盘位置',
+        '注意对手的发展方向',
+        '规划自己的轮盘移动'
+      ]
+    },
+    endConditions: [
+      '当游戏板上的某些位置被填满时触发结束',
+      '或者当卡牌耗尽时结束'
+    ],
+    scoring: {
+      duringGame: [
+        '建筑提供分数',
+        '军事胜利获得分数',
+        '商人卡片提供分数',
+        '政治影响力提供分数'
+      ],
+      endGame: [
+        '所有建筑的总分',
+        '军事成就的分数',
+        '商人套装的分数',
+        '政治影响力的分数',
+        '剩余资源换算分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '轮盘机制是特色',
+      '多个发展方向需要平衡',
+      '游戏时长约60-90分钟',
+      'Stefan Feld经典作品'
+    ],
+    tokens: [
+      { name: '轮盘标记', description: '在行动轮盘上移动的标记' },
+      { name: '工人', description: '放置到行动位的工人' },
+      { name: '资源token', description: '各种资源' },
+      { name: '建筑板块', description: '可以建造的建筑' },
+      { name: '商人卡', description: '收集成套获得分数' }
+    ]
+  },
+  {
+    id: 'ticket-to-ride-europe',
+    name: '铁路环游：欧洲',
+    nameEn: 'Ticket to Ride Europe',
+    description: 'Alan R. Moon经典火车路线建设桌游',
+    playerCount: '2-5人',
+    weight: 2.4,
+    background: '《铁路环游：欧洲》是由 Alan R. Moon 设计的经典路线建设游戏，于2005年出版，是《铁路环游》系列的欧洲版。游戏背景设定在20世纪初的欧洲，玩家扮演铁路公司大亨，通过收集火车卡牌、建设铁路路线来连接城市。游戏机制简单易懂：抽取或打出火车卡牌，建设路线完成任务。欧洲版增加了车站、隧道和轮渡等新元素，增加了策略深度。作为史上最受欢迎的家庭策略游戏之一，它以其简单上手、互动性强和主题吸引人著称，被誉为"现代桌游入门三杰"之一，适合各种玩家群体。',
+    image: '/images/ticket-to-ride-europe.jpg',
+    hasExpansions: true,
+    category: ['德式', '聚会'],
+    mechanism: ['手牌管理', '路线规划', '资源管理'],
+    setup: [
+      {
+        playerCount: '2-5人',
+        steps: [
+          '摆放欧洲地图游戏板',
+          '洗混火车卡牌',
+          '每位玩家拿取起始手牌和火车',
+          '每位玩家抽取3张任务卡，至少保留2张',
+          '翻开5张火车卡牌作为展示区',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '选择一个行动：',
+        '1. 抽2张火车卡牌（可以从展示区或牌堆）',
+        '2. 打出卡牌建设一条路线',
+        '3. 抽取3张新任务卡，至少保留1张',
+        '建设路线后放置火车到地图上'
+      ],
+      outsideYourTurn: [
+        '观察对手的火车放置',
+        '注意关键路线是否被抢占',
+        '规划替代路线',
+        '观察任务卡完成度'
+      ]
+    },
+    endConditions: [
+      '当有玩家的火车剩余2个或更少时，游戏还有最后一回合',
+      '所有玩家完成最后一回合后结束'
+    ],
+    scoring: {
+      duringGame: [
+        '建设路线获得分数（路线越长分数越高）'
+      ],
+      endGame: [
+        '完成的任务卡获得正分',
+        '未完成的任务卡获得负分',
+        '建设最长连续路线的玩家获得10分加分',
+        '车站每个4分',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-5人',
+      '欧洲版有隧道和车站',
+      '任务卡很重要但有风险',
+      '最长路线有额外加分',
+      '游戏时长约30-60分钟',
+      '现代桌游入门经典之一'
+    ],
+    tokens: [
+      { name: '火车卡牌', description: '各种颜色的火车卡牌' },
+      { name: '火车', description: '玩家的火车模型，放置到路线上' },
+      { name: '任务卡', description: '需要连接的两个城市的任务' },
+      { name: '车站', description: '可以借用别人路线的车站' }
+    ]
+  },
+  {
+    id: 'a-feast-for-odin',
+    name: '奥丁的盛宴',
+    nameEn: 'A Feast for Odin',
+    description: 'Uwe Rosenberg经典北欧主题策略桌游',
+    playerCount: '1-4人',
+    weight: 4.2,
+    background: '《奥丁的盛宴》是由 Uwe Rosenberg 设计的经典德式策略游戏，于2016年出版。游戏背景设定在维京时代，玩家扮演北欧族长，通过狩猎、捕鱼、贸易、掠夺来发展家族。游戏的核心机制是板块放置和资源管理：玩家收集各种资源板块，放置到自己的长屋中，获得分数和特殊能力。游戏包含7轮，每轮有不同的行动选择。作为 Uwe Rosenberg 最复杂的作品之一，它以其深度策略、丰富的选择和主题沉浸感著称，适合喜欢中重度策略游戏的玩家。',
+    image: '/images/a-feast-for-odin.jpg',
+    hasExpansions: true,
+    category: ['德式'],
+    mechanism: ['板块放置', '资源管理', '引擎构筑'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放主游戏板和岛屿板块',
+          '每位玩家拿取长屋板块和起始资源',
+          '洗混各种资源板块',
+          '放置探索板块',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '选择主要行动：',
+        '1. 狩猎/捕鱼',
+        '2. 掠夺',
+        '3. 贸易',
+        '4. 探索',
+        '5. 建造',
+        '6. 繁殖',
+        '执行行动，获得资源板块',
+        '放置板块到长屋中'
+      ],
+      outsideYourTurn: [
+        '观察对手的板块放置',
+        '注意关键资源',
+        '规划自己的发展'
+      ]
+    },
+    endConditions: [
+      '进行7轮后游戏结束',
+      '第7轮结束后进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '放置板块获得即时分数',
+        '完成特殊区域获得奖励'
+      ],
+      endGame: [
+        '长屋中所有板块的分数',
+        '特殊成就的分数',
+        '剩余资源换算分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人，有单人模式',
+      '共有7轮',
+      '板块放置是核心',
+      '资源管理很重要',
+      '游戏时长约90-150分钟',
+      'Uwe Rosenberg最复杂作品'
+    ],
+    tokens: [
+      { name: '资源板块', description: '各种资源和物品板块' },
+      { name: '长屋板块', description: '玩家的个人版图' },
+      { name: '探索板块', description: '可以探索的岛屿' },
+      { name: '工人', description: '玩家的工人' }
+    ]
+  },
+  {
+    id: 'forgotten-waters',
+    name: '念念不忘',
+    nameEn: 'Forgotten Waters',
+    description: 'J. Evan Garrett海盗主题合作冒险桌游',
+    playerCount: '3-7人',
+    weight: 3.0,
+    background: '《念念不忘》是由 J. Evan Garrett 设计的海盗主题合作冒险游戏，于2020年出版。游戏背景设定在大航海时代，玩家扮演海盗船员，驾驶海盗船在加勒比海冒险。游戏机制融合了合作冒险、故事驱动和资源管理，玩家通过APP来推进剧情，做出各种选择。每位玩家有独特的角色能力，需要密切配合。作为一款创新的故事驱动游戏，它以其精美的组件、丰富的剧情和高度互动性著称，适合喜欢冒险和故事的玩家群体。',
+    image: '/images/forgotten-waters.jpg',
+    hasExpansions: false,
+    category: ['合作'],
+    mechanism: ['手牌管理', '资源管理', '合作'],
+    setup: [
+      {
+        playerCount: '3-7人',
+        steps: [
+          '准备APP或剧本手册',
+          '每位玩家选择角色拿取角色板',
+          '拿取起始手牌和资源',
+          '放置海盗船和地图',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '通过APP推进剧情',
+        '做出选择',
+        '执行行动',
+        '与队友配合',
+        '管理资源'
+      ],
+      outsideYourTurn: [
+        '与队友讨论策略',
+        '提供建议',
+        '准备应对事件'
+      ]
+    },
+    endConditions: [
+      '完成主线剧情任务 → 胜利！',
+      '全员死亡 → 失败！'
+    ],
+    scoring: {
+      duringGame: [
+        '完成任务获得成就感',
+        '收集宝藏'
+      ],
+      endGame: [
+        '如果成功完成任务，团队胜利',
+        '计算总宝藏和成就'
+      ]
+    },
+    tips: [
+      '游戏支持3-7人',
+      '需要APP或剧本',
+      '合作很重要',
+      '剧情分支丰富',
+      '游戏时长约90-180分钟',
+      '故事驱动的冒险'
+    ],
+    tokens: [
+      { name: '角色板', description: '每位玩家的独特角色' },
+      { name: '海盗船', description: '团队的海盗船' },
+      { name: '地图板块', description: '加勒比海地图' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'smoke-and-summits',
+    name: '烟雾山谷',
+    nameEn: 'The Smoky Valley',
+    description: '西部淘金主题工人放置策略桌游',
+    playerCount: '2-4人',
+    weight: 2.5,
+    background: '《烟雾山谷》(The Smoky Valley) 是一款西部淘金主题的策略游戏，玩家扮演淘金者，在烟雾缭绕的山谷中挖掘金矿、建立营地。游戏机制融合了工人放置、资源管理和策略规划，玩家需要在有限的回合内收集最多的黄金。作为一款中等重量的策略游戏，它以其独特的西部主题、精美的组件和策略深度著称。',
+    image: '/images/smoke-and-summits.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['工人放置', '资源管理'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放山谷游戏板',
+          '放置金矿标记到矿区',
+          '每位玩家选择颜色并拿取工人',
+          '拿取起始资源和金币',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '放置工人到行动位',
+        '挖掘金矿',
+        '交易资源',
+        '升级装备',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的工人放置',
+        '注意金矿剩余量',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '挖掘金矿获得分数',
+        '完成任务获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '西部淘金主题',
+      '工人放置是核心',
+      '资源管理很重要',
+      '游戏时长约60-90分钟'
+    ],
+    tokens: [
+      { name: '工人', description: '玩家的工人，放置到行动位' },
+      { name: '金矿标记', description: '山谷中的金矿' },
+      { name: '金币', description: '游戏货币' }
+    ],
+    cards: [
+      { name: '装备卡', count: 24, description: '各种淘金装备' },
+      { name: '事件卡', count: 16, description: '随机事件' }
+    ]
+  },
+  {
+    id: 'the-wizards-gambit',
+    name: '诈赌巫师',
+    nameEn: "The Wizard's Gambit",
+    description: '奇幻主题策略桌游',
+    playerCount: '2-4人',
+    weight: 2.8,
+    background: '《诈赌巫师》是一款奇幻主题的策略游戏，玩家扮演巫师，通过魔法和谋略来竞争。游戏机制融合了手牌管理、策略规划和心理博弈，玩家需要虚张声势、策略性地使用卡牌来获得胜利。作为一款中等重量的策略游戏，它以其奇幻主题、深度策略和互动性著称，适合喜欢策略游戏的玩家。',
+    image: '/images/the-wizards-gambit.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['手牌管理', '策略'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择巫师',
+          '洗混魔法卡牌',
+          '拿取起始手牌',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '打出卡牌',
+        '使用魔法',
+        '虚张声势',
+        '获取优势'
+      ],
+      outsideYourTurn: [
+        '观察对手的策略',
+        '判断虚实'
+      ]
+    },
+    endConditions: [
+      '达成胜利条件',
+      '或当卡牌耗尽时'
+    ],
+    scoring: {
+      duringGame: [
+        '获得魔法力量'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '心理博弈很重要',
+      '虚张声势是策略',
+      '游戏时长约30-45分钟'
+    ],
+    cards: [
+      { name: '巫师卡', description: '每位玩家的巫师角色卡', count: 4 },
+      { name: '魔法卡', description: '各种魔法效果卡牌', count: 40 },
+      { name: '事件卡', description: '随机事件卡牌', count: 20 }
+    ]
+  },
+  {
+    id: 'prisoners-of-the-dance',
+    name: '犯人在跳舞',
+    nameEn: 'Prisoners of the Dance',
+    description: '音乐主题聚会桌游',
+    playerCount: '3-8人',
+    weight: 1.8,
+    background: '《犯人在跳舞》是一款音乐主题的聚会游戏，玩家扮演舞厅中的舞者，通过音乐和舞蹈来互动。游戏机制融合了反应、音乐节奏和派对玩法，规则简单但充满乐趣，适合各种聚会场合。作为一款轻量的聚会游戏，它以其欢快的节奏、互动性和趣味性著称，是派对破冰的绝佳选择。',
+    image: '/images/prisoners-of-the-dance.jpg',
+    hasExpansions: false,
+    category: ['聚会'],
+    mechanism: ['反应', '派对'],
+    setup: [
+      {
+        playerCount: '3-8人',
+        steps: [
+          '准备音乐',
+          '摆放游戏板',
+          '每位玩家拿取起始手牌',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '跟着音乐节奏',
+        '执行舞蹈动作',
+        '打出卡牌',
+        '互动'
+      ],
+      outsideYourTurn: [
+        '观察其他舞者',
+        '准备回应'
+      ]
+    },
+    endConditions: [
+      '当音乐结束时',
+      '或达成特殊条件时'
+    ],
+    scoring: {
+      duringGame: [
+        '完成舞蹈动作获得分数'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持3-8人',
+      '需要音乐',
+      '节奏很重要',
+      '游戏时长约15-30分钟',
+      '适合派对场合'
+    ],
+    tokens: [
+      { name: '舞蹈卡', description: '各种舞蹈动作' },
+      { name: '音乐卡', description: '音乐和节奏' }
+    ]
+  },
+  {
+    id: 'love-letter',
+    name: '情书',
+    nameEn: 'Love Letter',
+    description: 'Seiji Kanai经典情书传递桌游',
+    playerCount: '2-4人',
+    weight: 1.3,
+    background: '《情书》是由 Seiji Kanai 设计的经典微卡牌游戏，于2012年出版。游戏背景设定在宫廷中，玩家扮演追求者，试图将情书送到公主手中。游戏机制极简但策略深度足够：每位玩家只有2张手牌，通过打出卡牌来影响其他玩家，保护自己的情书。包含16张卡牌，每张都有独特的能力。作为史上最受欢迎的微卡牌游戏之一，它以其极简规则、深度策略、便携性和重玩价值著称，被誉为"现代桌游入门三杰"之一，适合各种玩家群体。',
+    image: '/images/love-letter.jpg',
+    hasExpansions: true,
+    category: ['聚会', '抽象'],
+    mechanism: ['手牌管理', '推理', '淘汰'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '洗混16张卡牌',
+          '每位玩家获得1张起始手牌',
+          '将1张牌面朝下放在一边（2人时2张）',
+          '剩余牌堆作为牌库',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '从牌库抽1张牌',
+        '从2张手牌中选择1张打出',
+        '执行卡牌效果'
+      ],
+      outsideYourTurn: [
+        '观察其他玩家的行动',
+        '推理手牌',
+        '保护自己'
+      ]
+    },
+    endConditions: [
+      '当牌库耗尽时，剩余玩家中手牌点数最高者获胜',
+      '或当只剩1位玩家时，该玩家立即获胜'
+    ],
+    scoring: {
+      duringGame: [
+        '赢得一轮获得1个爱情token'
+      ],
+      endGame: [
+        '根据玩家数量，先获得一定数量token的玩家获胜',
+        '2人：7个',
+        '3人：5个',
+        '4人：4个'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '只有16张卡',
+      '推理很重要',
+      '游戏时长约10-20分钟',
+      '便携易上手',
+      '现代桌游入门经典之一'
+    ],
+    tokens: [
+      { name: '爱情token', description: '赢得一轮的标记' }
+    ],
+    cards: [
+      { name: '卫兵', count: 5, description: '猜测一位玩家手牌，若正确则该玩家出局' },
+      { name: '神父', count: 2, description: '查看一位玩家手牌' },
+      { name: '男爵', count: 2, description: '与一位玩家比手牌点数，小者出局' },
+      { name: '侍女', count: 2, description: '直到自己下回合前免疫其他卡牌效果' },
+      { name: '王子', count: 2, description: '一位玩家（可自己）弃掉手牌重抽' },
+      { name: '国王', count: 1, description: '与一位玩家交换手牌' },
+      { name: '伯爵夫人', count: 1, description: '若手牌有国王或王子必须打出，无效果' },
+      { name: '公主', count: 1, description: '若打出或弃掉则立即出局' }
+    ]
+  },
+  {
+    id: 'vantage',
+    name: '万境奇旅',
+    nameEn: 'VANTAGE',
+    description: '合作探索与文明建设策略桌游',
+    playerCount: '1-6人',
+    weight: 2.8,
+    background: '《万境奇旅》是一款合作探索游戏，玩家团队需要探索神秘的新世界，建立文明。游戏机制融合了资源管理、合作策略和探索元素，玩家需要共同努力克服各种挑战。作为一款中等重量的合作游戏，它以其精美的组件、丰富的主题和合作体验著称。',
+    image: '/images/vantage.jpg',
+    hasExpansions: false,
+    category: ['合作', '美式'],
+    mechanism: ['资源管理', '合作', '探索'],
+    setup: [
+      {
+        playerCount: '1-6人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择角色',
+          '拿取起始资源',
+          '放置探索标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '执行行动',
+        '探索新区域',
+        '收集资源',
+        '建造建筑',
+        '与队友配合'
+      ],
+      outsideYourTurn: [
+        '与队友沟通',
+        '协调策略',
+        '准备应对事件'
+      ]
+    },
+    endConditions: [
+      '成功完成探索目标 → 胜利！',
+      '团队失败 → 失败！'
+    ],
+    scoring: {
+      duringGame: [
+        '完成探索获得分数'
+      ],
+      endGame: [
+        '计算总分数',
+        '团队胜利或失败'
+      ]
+    },
+    tips: [
+      '游戏支持1-6人',
+      '合作很重要',
+      '探索是核心',
+      '游戏时长约30-60分钟'
+    ],
+    tokens: [
+      { name: '角色卡', description: '每位玩家的角色' },
+      { name: '资源token', description: '各种资源' },
+      { name: '探索板块', description: '可以探索的区域' }
+    ]
+  },
+  {
+    id: 'mombasa',
+    name: '蒙巴萨',
+    nameEn: 'Mombasa',
+    description: '经典德式经济策略桌游',
+    playerCount: '2-4人',
+    weight: 3.8,
+    background: '《蒙巴萨》是由 Alexander Pfister 设计的经典德式策略游戏，于2015年出版。游戏背景设定在19世纪非洲东海岸，玩家扮演商人，通过贸易和投资来发展经济。游戏机制融合了手牌管理、资源管理和路线规划，玩家需要在多个回合中平衡收入和支出。作为一款中重度策略游戏，它以其深度策略、丰富的选择和主题沉浸感著称。',
+    image: '/images/mombasa.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['手牌管理', '资源管理', '路线规划'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择颜色',
+          '拿取起始手牌和资源',
+          '放置贸易标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '打出卡牌',
+        '执行行动',
+        '进行贸易',
+        '投资项目',
+        '获得收益'
+      ],
+      outsideYourTurn: [
+        '观察对手的策略',
+        '注意市场变化',
+        '规划自己的发展'
+      ]
+    },
+    endConditions: [
+      '进行一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '投资获得回报',
+        '贸易获得收益'
+      ],
+      endGame: [
+        '计算总财富',
+        '财富最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '经济策略是核心',
+      '手牌管理很重要',
+      '游戏时长约90-120分钟'
+    ],
+    tokens: [
+      { name: '贸易卡牌', description: '各种贸易商品' },
+      { name: '投资标记', description: '玩家的投资' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'bora-bora',
+    name: '波拉波拉岛',
+    nameEn: 'Bora Bora',
+    description: 'Stefan Feld经典岛屿建设策略桌游',
+    playerCount: '2-4人',
+    weight: 3.2,
+    background: '《波拉波拉岛》是由 Stefan Feld 设计的经典德式策略游戏，于2013年出版。游戏背景设定在南太平洋的波拉波拉岛，玩家扮演部落领袖，通过建造建筑、发展经济来获得分数。游戏机制融合了骰子驱动、资源管理和板块放置，玩家需要在多个回合中平衡各种资源。作为 Stefan Feld 的代表作之一，它以其创新的机制、深度策略和精美的主题著称。',
+    image: '/images/bora-bora.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['骰子驱动', '资源管理', '板块放置'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择颜色',
+          '放置起始建筑',
+          '拿取资源',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '投掷骰子',
+        '执行行动',
+        '建造建筑',
+        '收集资源',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的发展',
+        '注意资源需求',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '进行一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '建造建筑获得分数',
+        '完成任务获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '骰子驱动是核心',
+      '资源管理很重要',
+      '游戏时长约90分钟',
+      'Stefan Feld经典作品'
+    ],
+    tokens: [
+      { name: '骰子', description: '游戏核心组件' },
+      { name: '建筑板块', description: '各种建筑' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'scholars',
+    name: '南河学者',
+    nameEn: 'Scholars',
+    description: '知识探索与学术发展策略桌游',
+    playerCount: '1-4人',
+    weight: 3.5,
+    background: '《南河学者》是一款知识主题的策略游戏，玩家扮演学者，通过研究和探索来发展学术事业。游戏机制融合了手牌管理、资源管理和策略规划，玩家需要在多个领域中取得成就。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和重玩价值著称。',
+    image: '/images/scholars.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['手牌管理', '资源管理', '引擎构筑'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择学者',
+          '拿取起始手牌',
+          '放置知识标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '打出卡牌',
+        '进行研究',
+        '发表论文',
+        '获得声望',
+        '与其他学者合作'
+      ],
+      outsideYourTurn: [
+        '观察对手的研究方向',
+        '注意学术趋势',
+        '规划自己的研究'
+      ]
+    },
+    endConditions: [
+      '达成胜利条件',
+      '或当卡牌耗尽时'
+    ],
+    scoring: {
+      duringGame: [
+        '发表论文获得声望',
+        '完成研究获得分数'
+      ],
+      endGame: [
+        '计算总声望',
+        '声望最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '学术研究是核心',
+      '手牌管理很重要',
+      '游戏时长约90分钟'
+    ],
+    tokens: [
+      { name: '学者卡', description: '每位玩家的学者' },
+      { name: '研究卡', description: '各种研究项目' },
+      { name: '知识标记', description: '学术成就' }
+    ]
+  },
+  {
+    id: 'origins',
+    name: '起源：缔造者',
+    nameEn: 'Origins',
+    description: '文明起源与发展策略桌游',
+    playerCount: '1-4人',
+    weight: 3.0,
+    background: '《起源：缔造者》是一款文明发展主题的策略游戏，玩家扮演早期人类部落领袖，通过发展和扩张来建立文明。游戏机制融合了资源管理、板块放置和策略规划，玩家需要在多个时代中发展自己的文明。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和重玩价值著称。',
+    image: '/images/origins.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['资源管理', '板块放置', '引擎构筑'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择部落',
+          '放置起始板块',
+          '拿取资源',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '收集资源',
+        '建造建筑',
+        '发展科技',
+        '扩张领土',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的发展',
+        '注意时代变化',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '完成所有时代',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '建造建筑获得分数',
+        '发展科技获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '文明发展是核心',
+      '资源管理很重要',
+      '游戏时长约90分钟'
+    ],
+    tokens: [
+      { name: '部落板块', description: '玩家的文明板块' },
+      { name: '建筑板块', description: '各种建筑' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'coimbra',
+    name: '科英布拉',
+    nameEn: 'Coimbra',
+    description: '葡萄牙城市建设策略桌游',
+    playerCount: '2-4人',
+    weight: 3.3,
+    background: '《科英布拉》是由 Vital Lacerda 设计的德式策略游戏，于2018年出版。游戏背景设定在葡萄牙的科英布拉市，玩家扮演城市规划者，通过建造建筑、发展经济来获得分数。游戏机制融合了资源管理、手牌管理和策略规划，玩家需要在多个回合中平衡各种资源。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和重玩价值著称。',
+    image: '/images/coimbra.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['资源管理', '手牌管理', '策略'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择颜色',
+          '拿取起始手牌',
+          '放置起始建筑',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '打出卡牌',
+        '执行行动',
+        '建造建筑',
+        '获得资源',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的策略',
+        '注意建筑需求',
+        '规划自己的发展'
+      ]
+    },
+    endConditions: [
+      '进行一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '建造建筑获得分数',
+        '完成任务获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '城市建设是核心',
+      '手牌管理很重要',
+      '游戏时长约90分钟'
+    ],
+    tokens: [
+      { name: '建筑卡', description: '各种建筑' },
+      { name: '资源token', description: '各种资源' },
+      { name: '分数标记', description: '追踪得分' }
+    ]
+  },
+  {
+    id: 'marco-polo',
+    name: '马可波罗',
+    nameEn: 'Marco Polo',
+    description: '丝绸之路贸易策略桌游',
+    playerCount: '2-4人',
+    weight: 3.2,
+    background: '《马可波罗》是一款丝绸之路主题的策略游戏，玩家扮演商人，通过贸易和旅行来积累财富。游戏机制融合了路线规划、资源管理和手牌管理，玩家需要在丝绸之路上进行贸易。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和重玩价值著称。',
+    image: '/images/marco-polo.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['路线规划', '资源管理', '手牌管理'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择商人',
+          '拿取起始手牌',
+          '放置起始位置',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '移动商人',
+        '进行贸易',
+        '购买商品',
+        '出售商品',
+        '获得收益'
+      ],
+      outsideYourTurn: [
+        '观察对手的路线',
+        '注意市场价格',
+        '规划自己的贸易路线'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '贸易获得收益',
+        '完成任务获得奖励'
+      ],
+      endGame: [
+        '计算总财富',
+        '财富最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '贸易路线是核心',
+      '市场价格很重要',
+      '游戏时长约90分钟'
+    ],
+    tokens: [
+      { name: '商人标记', description: '玩家的商人' },
+      { name: '商品卡', description: '各种商品' },
+      { name: '路线卡牌', description: '旅行路线' }
+    ]
+  },
+  {
+    id: 'tidal-blades-2',
+    name: '潮汐之刃 2：无折者的崛起',
+    nameEn: 'Tidal Blades 2: The Unbroken',
+    description: '合作冒险策略桌游',
+    playerCount: '1-4人',
+    weight: 3.0,
+    background: '《潮汐之刃 2》是一款合作冒险游戏，玩家团队需要对抗邪恶势力，保护家园。游戏机制融合了合作策略、手牌管理和资源管理，玩家需要密切配合才能成功。作为一款中等重量的合作游戏，它以其精美的组件、丰富的剧情和合作体验著称。',
+    image: '/images/tidal-blades-2.jpg',
+    hasExpansions: false,
+    category: ['合作', '美式'],
+    mechanism: ['手牌管理', '资源管理', '合作'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择角色',
+          '拿取起始手牌',
+          '放置起始位置',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '打出卡牌',
+        '执行行动',
+        '与队友配合',
+        '对抗敌人',
+        '完成任务'
+      ],
+      outsideYourTurn: [
+        '与队友沟通',
+        '协调策略',
+        '准备应对挑战'
+      ]
+    },
+    endConditions: [
+      '成功完成任务 → 胜利！',
+      '团队失败 → 失败！'
+    ],
+    scoring: {
+      duringGame: [
+        '完成任务获得成就感',
+        '击败敌人获得奖励'
+      ],
+      endGame: [
+        '如果成功完成任务，团队胜利'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '合作很重要',
+      '策略协调是关键',
+      '游戏时长约90-120分钟'
+    ],
+    tokens: [
+      { name: '角色卡', description: '每位玩家的角色' },
+      { name: '行动卡', description: '各种行动' },
+      { name: '敌人token', description: '需要击败的敌人' }
+    ]
+  },
+  {
+    id: 'inventors',
+    name: '南河发明家',
+    nameEn: 'Inventors',
+    description: '发明创造与科技发展策略桌游',
+    playerCount: '1-4人',
+    weight: 3.5,
+    background: '《南河发明家》是一款科技主题的策略游戏，玩家扮演发明家，通过研究和创造来发展科技。游戏机制融合了手牌管理、资源管理和策略规划，玩家需要在多个领域中取得突破。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和重玩价值著称。',
+    image: '/images/inventors.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['手牌管理', '资源管理', '引擎构筑'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择发明家',
+          '拿取起始手牌',
+          '放置发明标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '研究科技',
+        '发明创造',
+        '申请专利',
+        '获得声望',
+        '与其他发明家合作'
+      ],
+      outsideYourTurn: [
+        '观察对手的研究方向',
+        '注意科技趋势',
+        '规划自己的发明'
+      ]
+    },
+    endConditions: [
+      '达成胜利条件',
+      '或当卡牌耗尽时'
+    ],
+    scoring: {
+      duringGame: [
+        '发明获得声望',
+        '专利获得分数'
+      ],
+      endGame: [
+        '计算总声望',
+        '声望最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '科技创新是核心',
+      '手牌管理很重要',
+      '游戏时长约90分钟'
+    ],
+    tokens: [
+      { name: '发明家卡', description: '每位玩家的发明家' },
+      { name: '科技卡', description: '各种科技' },
+      { name: '专利标记', description: '专利成就' }
+    ]
+  },
+  {
+    id: 'mycelia',
+    name: '蘑菇王国',
+    nameEn: 'Mycelia',
+    description: '真菌主题策略桌游',
+    playerCount: '1-4人',
+    weight: 2.5,
+    background: '《蘑菇王国》是一款真菌主题的策略游戏，玩家扮演真菌，通过扩展菌丝来占领领地。游戏机制融合了板块放置、资源管理和策略规划，玩家需要在多个回合中扩展自己的领地。作为一款轻中度策略游戏，它以其独特的主题、精美的组件和重玩价值著称。',
+    image: '/images/mycelia.jpg',
+    hasExpansions: false,
+    category: ['德式', '抽象'],
+    mechanism: ['板块放置', '资源管理'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择颜色',
+          '放置起始菌丝',
+          '拿取资源',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '扩展菌丝',
+        '收集孢子',
+        '发展真菌',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的扩张',
+        '注意资源需求',
+        '规划自己的领地'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '扩展领地获得分数',
+        '完成任务获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '菌丝扩展是核心',
+      '资源管理很重要',
+      '游戏时长约60-90分钟'
+    ],
+    tokens: [
+      { name: '菌丝板块', description: '玩家的菌丝' },
+      { name: '孢子token', description: '资源' },
+      { name: '真菌标记', description: '各种真菌' }
+    ]
+  },
+  {
+    id: 'memphis-mennefer',
+    name: '孟菲斯传奇',
+    nameEn: 'Memphis Mennefer',
+    description: '古埃及文明建设策略桌游',
+    playerCount: '1-4人',
+    weight: 3.5,
+    background: '《孟菲斯传奇》是一款古埃及主题的策略游戏，玩家扮演法老，通过建设神庙、发展经济来发展古埃及文明。游戏机制融合了资源管理、板块放置和策略规划，玩家需要在多个时代中发展自己的文明。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和精美的组件著称。',
+    image: '/images/memphis-mennefer.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['资源管理', '板块放置', '引擎构筑'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择法老',
+          '放置起始板块',
+          '拿取资源',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '收集资源',
+        '建造神庙',
+        '发展经济',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的发展',
+        '注意时代变化',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '完成所有时代',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '建造神庙获得分数',
+        '发展经济获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '古埃及主题',
+      '资源管理很重要',
+      '游戏时长约90分钟'
+    ],
+    tokens: [
+      { name: '法老标记', description: '玩家的法老' },
+      { name: '神庙板块', description: '各种神庙' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'ticket-to-ride-base',
+    name: '铁路环游',
+    nameEn: 'Ticket to Ride',
+    description: 'Alan R. Moon经典火车路线建设桌游',
+    playerCount: '2-5人',
+    weight: 2.0,
+    background: '《铁路环游》是由 Alan R. Moon 设计的经典路线建设游戏，于2004年出版。游戏背景设定在美国，玩家扮演铁路公司大亨，通过收集火车卡牌、建设铁路路线来连接城市。游戏机制简单易懂：抽取或打出火车卡牌，建设路线完成任务。作为史上最受欢迎的家庭策略游戏之一，它以其简单上手、互动性强和主题吸引人著称，被誉为"现代桌游入门三杰"之一。',
+    image: '/images/ticket-to-ride.jpg',
+    hasExpansions: true,
+    category: ['德式', '聚会'],
+    mechanism: ['手牌管理', '路线规划', '资源管理'],
+    setup: [
+      {
+        playerCount: '2-5人',
+        steps: [
+          '摆放美国地图游戏板',
+          '洗混火车卡牌',
+          '每位玩家拿取起始手牌和火车',
+          '每位玩家抽取3张任务卡，至少保留2张',
+          '翻开5张火车卡牌作为展示区',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '选择一个行动：',
+        '1. 抽2张火车卡牌',
+        '2. 打出卡牌建设一条路线',
+        '3. 抽取3张新任务卡',
+        '建设路线后放置火车到地图上'
+      ],
+      outsideYourTurn: [
+        '观察对手的火车放置',
+        '注意关键路线是否被抢占',
+        '规划替代路线'
+      ]
+    },
+    endConditions: [
+      '当有玩家的火车剩余2个或更少时，游戏还有最后一回合'
+    ],
+    scoring: {
+      duringGame: [
+        '建设路线获得分数'
+      ],
+      endGame: [
+        '完成的任务卡获得正分',
+        '未完成的任务卡获得负分',
+        '建设最长连续路线的玩家获得10分加分',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-5人',
+      '任务卡很重要但有风险',
+      '最长路线有额外加分',
+      '游戏时长约30-60分钟',
+      '现代桌游入门经典'
+    ],
+    tokens: [
+      { name: '火车卡牌', description: '各种颜色的火车卡牌' },
+      { name: '火车', description: '玩家的火车模型' },
+      { name: '任务卡', description: '需要连接的两个城市的任务' }
+    ]
+  },
+  {
+    id: 'lords-of-ragnarok',
+    name: '北欧众神',
+    nameEn: 'Lords of Ragnarok',
+    description: '北欧神话主题策略桌游',
+    playerCount: '2-4人',
+    weight: 3.8,
+    background: '《北欧众神》是一款北欧神话主题的策略游戏，玩家扮演北欧神祇，通过战斗和策略来决定世界的命运。游戏机制融合了卡牌管理、战斗系统和策略规划，玩家需要在末日之战中取得胜利。作为一款中重度策略游戏，它以其独特的主题、深度策略和精美的组件著称。',
+    image: '/images/lords-of-ragnarok.jpg',
+    hasExpansions: false,
+    category: ['美式'],
+    mechanism: ['卡牌管理', '战斗', '策略'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择神祇',
+          '拿取起始卡牌',
+          '放置起始单位',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '打出卡牌',
+        '移动单位',
+        '进行战斗',
+        '获得资源',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的策略',
+        '注意战场变化',
+        '规划自己的行动'
+      ]
+    },
+    endConditions: [
+      '达成胜利条件',
+      '或完成一定回合'
+    ],
+    scoring: {
+      duringGame: [
+        '战斗胜利获得分数',
+        '完成任务获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '北欧神话主题',
+      '战斗系统是核心',
+      '游戏时长约90-120分钟'
+    ],
+    tokens: [
+      { name: '神祇卡', description: '每位玩家的神祇' },
+      { name: '单位token', description: '各种战斗单位' },
+      { name: '战斗卡牌', description: '战斗相关卡牌' }
+    ]
+  },
+  {
+    id: 'champions-of-midgard',
+    name: '维京传奇',
+    nameEn: 'Champions of Midgard',
+    description: '维京主题策略桌游',
+    playerCount: '2-4人',
+    weight: 2.8,
+    background: '《维京传奇》是一款维京主题的策略游戏，玩家扮演维京战士，通过战斗和贸易来发展自己的部落。游戏机制融合了资源管理、战斗系统和策略规划，玩家需要在多个回合中平衡战斗和发展。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和精美的组件著称。',
+    image: '/images/champions-of-midgard.jpg',
+    hasExpansions: true,
+    category: ['德式'],
+    mechanism: ['资源管理', '战斗', '策略'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择战士',
+          '拿取起始资源',
+          '放置起始单位',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '收集资源',
+        '招募战士',
+        '进行战斗',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的发展',
+        '注意战斗机会',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '战斗胜利获得分数',
+        '完成任务获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '维京主题',
+      '战斗和发展需要平衡',
+      '游戏时长约60-90分钟'
+    ],
+    tokens: [
+      { name: '战士标记', description: '玩家的战士' },
+      { name: '资源token', description: '各种资源' },
+      { name: '敌人token', description: '需要击败的敌人' }
+    ]
+  },
+  {
+    id: 'galileo-galilei',
+    name: '伽利略',
+    nameEn: 'Galileo Galilei',
+    description: '科学革命主题策略桌游',
+    playerCount: '1-4人',
+    weight: 3.2,
+    background: '《伽利略》是一款科学革命主题的策略游戏，玩家扮演科学家，通过研究和发现来推动科学进步。游戏机制融合了手牌管理、资源管理和策略规划，玩家需要在多个领域中取得突破。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和重玩价值著称。',
+    image: '/images/galileo-galilei.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['手牌管理', '资源管理', '引擎构筑'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择科学家',
+          '拿取起始手牌',
+          '放置研究标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '进行研究',
+        '发表发现',
+        '获得声望',
+        '与其他科学家合作'
+      ],
+      outsideYourTurn: [
+        '观察对手的研究方向',
+        '注意科学趋势',
+        '规划自己的研究'
+      ]
+    },
+    endConditions: [
+      '达成胜利条件',
+      '或当卡牌耗尽时'
+    ],
+    scoring: {
+      duringGame: [
+        '发表发现获得声望',
+        '完成研究获得分数'
+      ],
+      endGame: [
+        '计算总声望',
+        '声望最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '科学革命主题',
+      '研究是核心',
+      '游戏时长约90分钟'
+    ],
+    tokens: [
+      { name: '科学家卡', description: '每位玩家的科学家' },
+      { name: '研究卡', description: '各种研究项目' },
+      { name: '发现标记', description: '科学发现' }
+    ]
+  },
+  {
+    id: 'notre-dame',
+    name: '圣母院',
+    nameEn: 'Notre Dame',
+    description: 'Stefan Feld经典城市建设策略桌游',
+    playerCount: '2-5人',
+    weight: 2.5,
+    background: '《圣母院》是由 Stefan Feld 设计的经典德式策略游戏，于2007年出版。游戏背景设定在中世纪巴黎，玩家扮演城市建设者，通过建造建筑、发展经济来获得分数。游戏机制融合了骰子驱动、资源管理和策略规划，玩家需要在多个回合中平衡各种资源。作为 Stefan Feld 的代表作之一，它以其创新的机制、深度策略和精美的主题著称。',
+    image: '/images/notre-dame.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['骰子驱动', '资源管理', '策略'],
+    setup: [
+      {
+        playerCount: '2-5人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择颜色',
+          '拿取起始资源',
+          '放置起始建筑',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '投掷骰子',
+        '执行行动',
+        '建造建筑',
+        '获得资源',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的发展',
+        '注意资源需求',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '进行一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '建造建筑获得分数',
+        '完成任务获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-5人',
+      '中世纪巴黎主题',
+      '骰子驱动是核心',
+      '游戏时长约45-60分钟',
+      'Stefan Feld经典作品'
+    ],
+    tokens: [
+      { name: '骰子', description: '游戏核心组件' },
+      { name: '建筑板块', description: '各种建筑' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'endeavor-deep-sea',
+    name: '奋进号：深海',
+    nameEn: 'Endeavor Deep Sea',
+    description: '深海探索策略桌游',
+    playerCount: '1-4人',
+    weight: 2.8,
+    background: '《奋进号：深海》是一款深海探索主题的策略游戏，玩家扮演深海探险家，通过探索和收集来发展自己的船队。游戏机制融合了资源管理、路线规划和策略规划，玩家需要在多个回合中探索深海。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和精美的组件著称。',
+    image: '/images/endeavor-deep-sea.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['资源管理', '路线规划', '策略'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择探险家',
+          '拿取起始资源',
+          '放置起始船只',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '探索深海',
+        '收集资源',
+        '升级船只',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的探索',
+        '注意资源需求',
+        '规划自己的路线'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '探索获得分数',
+        '收集资源获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '深海探索主题',
+      '船只升级很重要',
+      '游戏时长约60-90分钟'
+    ],
+    tokens: [
+      { name: '探险家标记', description: '玩家的探险家' },
+      { name: '船只板块', description: '各种船只' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'kells',
+    name: '凯尔斯',
+    nameEn: 'Kells',
+    description: '爱尔兰中世纪主题策略桌游',
+    playerCount: '2-5人',
+    weight: 3.5,
+    background: '《凯尔斯》是一款爱尔兰中世纪主题的策略游戏，玩家扮演修道院修士，通过抄写经书和装饰来获得分数。游戏机制融合了手牌管理、资源管理和策略规划，玩家需要在多个回合中平衡各种资源。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和精美的组件著称。',
+    image: '/images/kells.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['手牌管理', '资源管理', '策略'],
+    setup: [
+      {
+        playerCount: '2-5人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择修士',
+          '拿取起始手牌',
+          '放置起始标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '抄写经书',
+        '装饰页面',
+        '获得资源',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的进度',
+        '注意资源需求',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '抄写经书获得分数',
+        '装饰页面获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-5人',
+      '爱尔兰中世纪主题',
+      '经书抄写是核心',
+      '游戏时长约90分钟'
+    ],
+    tokens: [
+      { name: '修士卡', description: '每位玩家的修士' },
+      { name: '经书板块', description: '各种经书' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'neis',
+    name: '奈斯尔传奇',
+    nameEn: 'Neis',
+    description: '奇幻主题策略桌游',
+    playerCount: '1-4人',
+    weight: 3.2,
+    background: '《奈斯尔传奇》是一款奇幻主题的策略游戏，玩家扮演传奇英雄，通过冒险和战斗来获得荣耀。游戏机制融合了卡牌管理、战斗系统和策略规划，玩家需要在多个回合中完成各种任务。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和精美的组件著称。',
+    image: '/images/neis.jpg',
+    hasExpansions: false,
+    category: ['德式', '美式'],
+    mechanism: ['卡牌管理', '战斗', '策略'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择英雄',
+          '拿取起始卡牌',
+          '放置起始标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '打出卡牌',
+        '进行冒险',
+        '战斗敌人',
+        '获得奖励'
+      ],
+      outsideYourTurn: [
+        '观察对手的进度',
+        '注意任务需求',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '完成冒险获得分数',
+        '战斗胜利获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '奇幻主题',
+      '冒险和战斗是核心',
+      '游戏时长约60-90分钟'
+    ],
+    tokens: [
+      { name: '英雄卡', description: '每位玩家的英雄' },
+      { name: '冒险卡', description: '各种冒险' },
+      { name: '敌人token', description: '需要击败的敌人' }
+    ]
+  },
+  {
+    id: 'egizia',
+    name: '埃及人：法老王',
+    nameEn: 'Egizia',
+    description: '古埃及金字塔建设策略桌游',
+    playerCount: '2-4人',
+    weight: 3.0,
+    background: '《埃及人：法老王》是一款古埃及主题的策略游戏，玩家扮演埃及建筑师，通过建造金字塔和神庙来获得分数。游戏机制融合了资源管理、板块放置和策略规划，玩家需要在多个回合中平衡各种资源。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和精美的组件著称。',
+    image: '/images/egizia.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['资源管理', '板块放置', '策略'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择建筑师',
+          '拿取起始资源',
+          '放置起始板块',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '收集资源',
+        '建造金字塔',
+        '建造神庙',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的进度',
+        '注意资源需求',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '建造金字塔获得分数',
+        '建造神庙获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '古埃及主题',
+      '金字塔建设是核心',
+      '游戏时长约90分钟'
+    ],
+    tokens: [
+      { name: '建筑师标记', description: '玩家的建筑师' },
+      { name: '金字塔板块', description: '金字塔组件' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'merchant-renaissance',
+    name: '海商传奇：文艺复兴',
+    nameEn: 'Merchant Renaissance',
+    description: '文艺复兴时期贸易策略桌游',
+    playerCount: '1-4人',
+    weight: 3.5,
+    background: '《海商传奇：文艺复兴》是一款文艺复兴时期主题的策略游戏，玩家扮演商人，通过贸易和投资来积累财富。游戏机制融合了手牌管理、资源管理和路线规划，玩家需要在多个回合中平衡收入和支出。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和重玩价值著称。',
+    image: '/images/merchant-renaissance.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['手牌管理', '资源管理', '路线规划'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择商人',
+          '拿取起始手牌',
+          '放置起始标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '进行贸易',
+        '投资项目',
+        '扩展路线',
+        '获得收益'
+      ],
+      outsideYourTurn: [
+        '观察对手的策略',
+        '注意市场变化',
+        '规划自己的发展'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '贸易获得收益',
+        '投资获得回报'
+      ],
+      endGame: [
+        '计算总财富',
+        '财富最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '文艺复兴主题',
+      '贸易和投资是核心',
+      '游戏时长约90-120分钟'
+    ],
+    tokens: [
+      { name: '商人卡', description: '每位玩家的商人' },
+      { name: '贸易卡', description: '各种贸易商品' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'unfathomable',
+    name: '深渊之中',
+    nameEn: 'Unfathomable',
+    description: '克苏鲁主题合作冒险桌游',
+    playerCount: '3-6人',
+    weight: 3.5,
+    background: '《深渊之中》是一款克苏鲁主题的合作冒险游戏，玩家团队需要对抗来自深海的恐怖威胁。游戏机制融合了合作策略、手牌管理和资源管理，玩家需要密切配合才能成功。作为一款中等重量的合作游戏，它以其独特的主题、紧张的氛围和合作体验著称。',
+    image: '/images/unfathomable.jpg',
+    hasExpansions: false,
+    category: ['合作', '美式'],
+    mechanism: ['手牌管理', '资源管理', '合作'],
+    setup: [
+      {
+        playerCount: '3-6人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择角色',
+          '拿取起始手牌',
+          '放置起始标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '打出卡牌',
+        '执行行动',
+        '与队友配合',
+        '对抗威胁',
+        '完成任务'
+      ],
+      outsideYourTurn: [
+        '与队友沟通',
+        '协调策略',
+        '准备应对事件'
+      ]
+    },
+    endConditions: [
+      '成功完成任务 → 胜利！',
+      '团队失败 → 失败！'
+    ],
+    scoring: {
+      duringGame: [
+        '完成任务获得成就感',
+        '击败敌人获得奖励'
+      ],
+      endGame: [
+        '如果成功完成任务，团队胜利'
+      ]
+    },
+    tips: [
+      '游戏支持3-6人',
+      '克苏鲁主题',
+      '合作很重要',
+      '游戏时长约90-120分钟'
+    ],
+    tokens: [
+      { name: '角色卡', description: '每位玩家的角色' },
+      { name: '行动卡', description: '各种行动' },
+      { name: '威胁token', description: '需要对抗的威胁' }
+    ]
+  },
+  {
+    id: 'cultures',
+    name: '文化冲突：永恒纪念版',
+    nameEn: 'Cultures',
+    description: '文明冲突主题策略桌游',
+    playerCount: '2-4人',
+    weight: 3.8,
+    background: '《文化冲突：永恒纪念版》是一款文明冲突主题的策略游戏，玩家扮演不同文明的领袖，通过发展和扩张来获得胜利。游戏机制融合了资源管理、手牌管理和策略规划，玩家需要在多个时代中发展自己的文明。作为一款中重度策略游戏，它以其独特的主题、深度策略和精美的组件著称。',
+    image: '/images/cultures.jpg',
+    hasExpansions: false,
+    category: ['美式'],
+    mechanism: ['资源管理', '手牌管理', '策略'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择文明',
+          '拿取起始手牌',
+          '放置起始板块',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '发展文明',
+        '扩张领土',
+        '进行战争',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的发展',
+        '注意时代变化',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '完成所有时代',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '发展文明获得分数',
+        '扩张领土获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '文明冲突主题',
+      '多路线发展',
+      '游戏时长约90-120分钟'
+    ],
+    tokens: [
+      { name: '文明卡', description: '每位玩家的文明' },
+      { name: '领土板块', description: '各种领土' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'eclipse',
+    name: '星蚀：黎明重现',
+    nameEn: 'Eclipse',
+    description: '太空4X策略桌游',
+    playerCount: '2-6人',
+    weight: 4.0,
+    background: '《星蚀》是一款太空4X策略游戏，玩家扮演星际文明领袖，通过探索、扩张、开发和消灭来征服银河系。游戏机制融合了资源管理、战斗系统和策略规划，玩家需要在多个回合中发展自己的星际帝国。作为一款重度策略游戏，它以其深度策略、丰富的选择和宏大的主题著称。',
+    image: '/images/eclipse.jpg',
+    hasExpansions: true,
+    category: ['美式'],
+    mechanism: ['资源管理', '战斗', '策略'],
+    setup: [
+      {
+        playerCount: '2-6人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择文明',
+          '拿取起始资源',
+          '放置起始飞船',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '探索星系',
+        '开发星球',
+        '建造飞船',
+        '进行战斗',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的扩张',
+        '注意军事力量',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '占领星球获得分数',
+        '完成任务获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-6人',
+      '太空4X主题',
+      '策略深度很高',
+      '游戏时长约120-180分钟'
+    ],
+    tokens: [
+      { name: '文明卡', description: '每位玩家的文明' },
+      { name: '星球板块', description: '各种星球' },
+      { name: '飞船token', description: '各种飞船' }
+    ]
+  },
+  {
+    id: 'tzolkin',
+    name: '卓尔金历：玛雅日历',
+    nameEn: 'Tzolk\'in',
+    description: '玛雅文明主题策略桌游',
+    playerCount: '2-4人',
+    weight: 3.5,
+    background: '《卓尔金历》是一款玛雅文明主题的策略游戏，玩家扮演玛雅祭司，通过发展和祭祀来获得分数。游戏机制融合了资源管理、板块放置和策略规划，玩家需要在多个回合中平衡各种资源。作为一款中等重量的策略游戏，它以其独特的主题、创新的机制和深度策略著称。',
+    image: '/images/tzolkin.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['资源管理', '板块放置', '引擎构筑'],
+    setup: [
+      {
+        playerCount: '2-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择祭司',
+          '拿取起始资源',
+          '放置起始板块',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '收集资源',
+        '建造建筑',
+        '进行祭祀',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的发展',
+        '注意资源需求',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '建造建筑获得分数',
+        '祭祀获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持2-4人',
+      '玛雅文明主题',
+      '日历机制是核心',
+      '游戏时长约90分钟'
+    ],
+    tokens: [
+      { name: '祭司标记', description: '玩家的祭司' },
+      { name: '建筑板块', description: '各种建筑' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'imperial-settlers',
+    name: '帝国建筑师',
+    nameEn: 'Imperial Settlers',
+    description: '文明建设策略桌游',
+    playerCount: '1-5人',
+    weight: 2.8,
+    background: '《帝国建筑师》是一款文明建设主题的策略游戏，玩家扮演帝国建设者，通过建造建筑、发展经济来获得分数。游戏机制融合了手牌管理、资源管理和策略规划，玩家需要在多个回合中平衡各种资源。作为一款中等重量的策略游戏，它以其独特的主题、深度策略和重玩价值著称。',
+    image: '/images/imperial-settlers.jpg',
+    hasExpansions: true,
+    category: ['德式'],
+    mechanism: ['手牌管理', '资源管理', '引擎构筑'],
+    setup: [
+      {
+        playerCount: '1-5人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择文明',
+          '拿取起始手牌',
+          '放置起始板块',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '打出卡牌',
+        '建造建筑',
+        '获得资源',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的发展',
+        '注意卡牌组合',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '建造建筑获得分数',
+        '完成任务获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-5人',
+      '文明建设主题',
+      '卡牌组合很重要',
+      '游戏时长约60-90分钟'
+    ],
+    tokens: [
+      { name: '文明卡', description: '每位玩家的文明' },
+      { name: '建筑卡', description: '各种建筑' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'carnegie',
+    name: '钢铁大王：卡内基',
+    nameEn: 'Carnegie',
+    description: '工业革命主题策略桌游',
+    playerCount: '1-4人',
+    weight: 3.8,
+    background: '《钢铁大王：卡内基》是一款工业革命主题的策略游戏，玩家扮演工业家，通过投资和发展来建立工业帝国。游戏机制融合了资源管理、手牌管理和策略规划，玩家需要在多个回合中平衡收入和支出。作为一款中重度策略游戏，它以其独特的主题、深度策略和精美的组件著称。',
+    image: '/images/carnegie.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['资源管理', '手牌管理', '引擎构筑'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择工业家',
+          '拿取起始手牌',
+          '放置起始标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '投资项目',
+        '建设工厂',
+        '获得收益',
+        '扩大帝国'
+      ],
+      outsideYourTurn: [
+        '观察对手的策略',
+        '注意市场变化',
+        '规划自己的发展'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '投资获得回报',
+        '建设获得分数'
+      ],
+      endGame: [
+        '计算总财富',
+        '财富最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '工业革命主题',
+      '投资策略是核心',
+      '游戏时长约90-120分钟'
+    ],
+    tokens: [
+      { name: '工业家卡', description: '每位玩家的工业家' },
+      { name: '工厂板块', description: '各种工厂' },
+      { name: '资源token', description: '各种资源' }
+    ]
+  },
+  {
+    id: 'spirit-island',
+    name: '灵迹岛',
+    nameEn: 'Spirit Island',
+    description: '合作策略桌游',
+    playerCount: '1-4人',
+    weight: 3.5,
+    background: '《灵迹岛》是一款合作策略游戏，玩家扮演岛屿的灵迹，通过力量和策略来保护家园免受入侵者的威胁。游戏机制融合了合作策略、手牌管理和资源管理，玩家需要密切配合才能成功。作为一款中等重量的合作游戏，它以其独特的主题、深度策略和合作体验著称。',
+    image: '/images/spirit-island.jpg',
+    hasExpansions: true,
+    category: ['合作', '美式'],
+    mechanism: ['手牌管理', '资源管理', '合作'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择灵迹',
+          '拿取起始手牌',
+          '放置起始标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '打出卡牌',
+        '使用能力',
+        '与队友配合',
+        '抵御入侵者',
+        '保护岛屿'
+      ],
+      outsideYourTurn: [
+        '与队友沟通',
+        '协调策略',
+        '准备应对威胁'
+      ]
+    },
+    endConditions: [
+      '成功驱逐所有入侵者 → 胜利！',
+      '岛屿被摧毁 → 失败！'
+    ],
+    scoring: {
+      duringGame: [
+        '驱逐入侵者获得成就感',
+        '保护岛屿获得奖励'
+      ],
+      endGame: [
+        '如果成功驱逐入侵者，团队胜利'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '合作游戏',
+      '灵迹能力很重要',
+      '游戏时长约90-120分钟'
+    ],
+    tokens: [
+      { name: '灵迹卡', description: '每位玩家的灵迹' },
+      { name: '能力卡', description: '各种能力' },
+      { name: '入侵者token', description: '需要驱逐的入侵者' }
+    ]
+  },
+  {
+    id: 'lisboa',
+    name: '里斯本',
+    nameEn: 'Lisboa',
+    description: '葡萄牙城市重建策略桌游',
+    playerCount: '1-4人',
+    weight: 3.8,
+    background: '《里斯本》是由 Vital Lacerda 设计的德式策略游戏，于2017年出版。游戏背景设定在1755年里斯本大地震后的重建时期，玩家扮演城市规划者，通过重建城市、发展经济来获得分数。游戏机制融合了资源管理、手牌管理和策略规划，玩家需要在多个回合中平衡各种资源。作为一款中重度策略游戏，它以其独特的主题、深度策略和精美的组件著称。',
+    image: '/images/lisboa.jpg',
+    hasExpansions: false,
+    category: ['德式'],
+    mechanism: ['资源管理', '手牌管理', '策略'],
+    setup: [
+      {
+        playerCount: '1-4人',
+        steps: [
+          '摆放游戏板',
+          '每位玩家选择角色',
+          '拿取起始手牌',
+          '放置起始标记',
+          '决定起始玩家'
+        ]
+      }
+    ],
+    turnActions: {
+      onYourTurn: [
+        '重建建筑',
+        '发展经济',
+        '获得资源',
+        '获得分数'
+      ],
+      outsideYourTurn: [
+        '观察对手的发展',
+        '注意资源需求',
+        '规划自己的策略'
+      ]
+    },
+    endConditions: [
+      '完成一定回合后游戏结束',
+      '进入终局计分'
+    ],
+    scoring: {
+      duringGame: [
+        '重建建筑获得分数',
+        '发展经济获得奖励'
+      ],
+      endGame: [
+        '计算总分数',
+        '分数最高者获胜'
+      ]
+    },
+    tips: [
+      '游戏支持1-4人',
+      '里斯本重建主题',
+      '资源管理很重要',
+      '游戏时长约90-120分钟',
+      'Vital Lacerda经典作品'
+    ],
+    tokens: [
+      { name: '角色卡', description: '每位玩家的角色' },
+      { name: '建筑板块', description: '各种建筑' },
+      { name: '资源token', description: '各种资源' }
+    ]
   }
 ]

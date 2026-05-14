@@ -39,10 +39,12 @@ export default function HomePage() {
   const { language, toggleLanguage, t } = useLanguage()
   const navigate = useNavigate()
 
-  const filteredGames = games.filter(game =>
-    game.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    game.nameEn.toLowerCase().includes(searchQuery.toLowerCase())
-  )
+  const filteredGames = games
+    .filter(game =>
+      game.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      game.nameEn.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    .sort((a, b) => (b.weight || 0) - (a.weight || 0))
 
   const handleGameClick = (gameId: string) => {
     const game = games.find(g => g.id === gameId)
@@ -155,14 +157,26 @@ export default function HomePage() {
                           {cat}
                         </span>
                       ))}
-                      {game.mechanism.map(mech => (
-                        <span
-                          key={mech}
-                          className={`text-xs px-2 py-0.5 rounded-full font-medium ${mechanismColors[mech] || 'bg-gray-100 text-gray-700'}`}
-                        >
-                          {mech}
-                        </span>
-                      ))}
+                      {game.mechanism
+                        .filter(mech => ['德式', '美式', '聚会', '合作', '抽象'].includes(mech))
+                        .map(mech => (
+                          <span
+                            key={mech}
+                            className={`text-xs px-2 py-0.5 rounded-full font-medium ${mechanismColors[mech] || 'bg-gray-100 text-gray-700'}`}
+                          >
+                            {mech}
+                          </span>
+                        ))}
+                      {game.mechanism
+                        .filter(mech => !['德式', '美式', '聚会', '合作', '抽象'].includes(mech))
+                        .map(mech => (
+                          <span
+                            key={mech}
+                            className={`text-xs px-2 py-0.5 rounded-full font-medium ${mechanismColors[mech] || 'bg-gray-100 text-gray-700'}`}
+                          >
+                            {mech}
+                          </span>
+                        ))}
                     </div>
                     <div className="flex items-center gap-3 mt-1.5">
                       {game.playerCount && (
