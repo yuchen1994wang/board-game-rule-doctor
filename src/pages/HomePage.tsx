@@ -11,10 +11,15 @@ type SortOption = 'weight' | 'name' | 'playerCount'
 const CATEGORIES = ['德式', '美式', '聚会', '合作', '抽象']
 const MECHANISMS = ['工人放置', '骰子驱动', '引擎构筑', '拍卖', '卡牌驱动', '板块放置', '手牌管理', '资源管理', '区域控制', '合作', '轮抽', '谈判', '路线规划', '网格移动', '拼图', '记忆', '反应']
 const PLAYER_COUNT_OPTIONS = [
-  { label: '1-2人', value: '1-2', min: 1, max: 2 },
-  { label: '3-4人', value: '3-4', min: 3, max: 4 },
-  { label: '5-6人', value: '5-6', min: 5, max: 6 },
-  { label: '7+人', value: '7+', min: 7, max: 20 }
+  { label: '1人', value: '1', min: 1, max: 1 },
+  { label: '2人', value: '2', min: 2, max: 2 },
+  { label: '3人', value: '3', min: 3, max: 3 },
+  { label: '4人', value: '4', min: 4, max: 4 },
+  { label: '5人', value: '5', min: 5, max: 5 },
+  { label: '6人', value: '6', min: 6, max: 6 },
+  { label: '7人', value: '7', min: 7, max: 7 },
+  { label: '8人', value: '8', min: 8, max: 8 },
+  { label: '8+人', value: '8+', min: 8, max: 20 }
 ]
 const WEIGHT_OPTIONS = [
   { label: '轻量 <2.0', value: 'light', min: 0, max: 1.99 },
@@ -55,8 +60,8 @@ export default function HomePage() {
   const [selectedGame, setSelectedGame] = useState<string | null>(null)
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [selectedMechanisms, setSelectedMechanisms] = useState<string[]>([])
-  const [playerCountFilter, setPlayerCountFilter] = useState<string | null>(null)
-  const [weightFilter, setWeightFilter] = useState<string | null>(null)
+  const [selectedPlayerCounts, setSelectedPlayerCounts] = useState<string[]>([])
+  const [selectedWeights, setSelectedWeights] = useState<string[]>([])
   const [sortBy, setSortBy] = useState<SortOption>('weight')
   const [showFilters, setShowFilters] = useState(false)
   const { language, toggleLanguage, t } = useLanguage()
@@ -79,32 +84,36 @@ export default function HomePage() {
       const categoryMatch = selectedCategories.length === 0 || 
                            game.category.some(cat => selectedCategories.includes(cat))
       
+      // 机制是"且"逻辑：选中的所有机制都必须包含
       const mechanismMatch = selectedMechanisms.length === 0 || 
-                            game.mechanism.some(mech => selectedMechanisms.includes(mech))
+                            selectedMechanisms.every(mech => game.mechanism.includes(mech as typeof game.mechanism[number]))
       
+      // 人数是"或"逻辑：任一选中的人数匹配即可
       let playerCountMatch = true
-      if (playerCountFilter) {
-        const option = PLAYER_COUNT_OPTIONS.find(p => p.value === playerCountFilter)
-        if (option && game.playerCount) {
-          const gamePlayerRange = parsePlayerCount(game.playerCount)
-          if (gamePlayerRange) {
-            if (option.value === '7+') {
-              playerCountMatch = gamePlayerRange.min >= 7
-            } else {
-              playerCountMatch = gamePlayerRange.max >= option.min && gamePlayerRange.min <= option.max
+      if (selectedPlayerCounts.length > 0) {
+        const gamePlayerRange = parsePlayerCount(game.playerCount || '')
+        if (gamePlayerRange) {
+          playerCountMatch = selectedPlayerCounts.some(pcValue => {
+            const option = PLAYER_COUNT_OPTIONS.find(p => p.value === pcValue)
+            if (!option) return false
+            if (pcValue === '8+') {
+              return gamePlayerRange.max >= 8
             }
-          } else {
-            playerCountMatch = false
-          }
+            return gamePlayerRange.max >= option.min && gamePlayerRange.min <= option.max
+          })
+        } else {
+          playerCountMatch = false
         }
       }
       
+      // BGG权重是"或"逻辑：任一选中的权重范围匹配即可
       let weightMatch = true
-      if (weightFilter) {
-        const option = WEIGHT_OPTIONS.find(w => w.value === weightFilter)
-        if (option && game.weight) {
-          weightMatch = game.weight >= option.min && game.weight <= option.max
-        }
+      if (selectedWeights.length > 0) {
+        weightMatch = selectedWeights.some(wValue => {
+          const option = WEIGHT_OPTIONS.find(w => w.value === wValue)
+          if (!option || !game.weight) return false
+          return game.weight >= option.min && game.weight <= option.max
+        })
       }
       
       return nameMatch && categoryMatch && mechanismMatch && playerCountMatch && weightMatch
@@ -142,29 +151,45 @@ export default function HomePage() {
     )
   }
 
+  const handlePlayerCountToggle = (value: string) => {
+    setSelectedPlayerCounts(prev =>
+      prev.includes(value)
+        ? prev.filter(v => v !== value)
+        : [...prev, value]
+    )
+  }
+
+  const handleWeightToggle = (value: string) => {
+    setSelectedWeights(prev =>
+      prev.includes(value)
+        ? prev.filter(v => v !== value)
+        : [...prev, value]
+    )
+  }
+
   const removeFilter = (type: string, value?: string) => {
     if (type === 'category' && value) {
       setSelectedCategories(prev => prev.filter(c => c !== value))
     } else if (type === 'mechanism' && value) {
       setSelectedMechanisms(prev => prev.filter(m => m !== value))
-    } else if (type === 'playerCount') {
-      setPlayerCountFilter(null)
-    } else if (type === 'weight') {
-      setWeightFilter(null)
+    } else if (type === 'playerCount' && value) {
+      setSelectedPlayerCounts(prev => prev.filter(v => v !== value))
+    } else if (type === 'weight' && value) {
+      setSelectedWeights(prev => prev.filter(v => v !== value))
     }
   }
 
   const clearAllFilters = () => {
     setSelectedCategories([])
     setSelectedMechanisms([])
-    setPlayerCountFilter(null)
-    setWeightFilter(null)
+    setSelectedPlayerCounts([])
+    setSelectedWeights([])
     setSearchQuery('')
     setSortBy('weight')
   }
 
   const hasActiveFilters = selectedCategories.length > 0 || selectedMechanisms.length > 0 || 
-                          playerCountFilter || weightFilter || searchQuery
+                          selectedPlayerCounts.length > 0 || selectedWeights.length > 0 || searchQuery
 
   const handleGameClick = (gameId: string) => {
     const game = games.find(g => g.id === gameId)
@@ -225,9 +250,9 @@ export default function HomePage() {
             >
               <Filter className="w-4 h-4" />
               {t('筛选', 'Filters')}
-              {(selectedCategories.length > 0 || selectedMechanisms.length > 0 || playerCountFilter || weightFilter) && (
+              {(selectedCategories.length > 0 || selectedMechanisms.length > 0 || selectedPlayerCounts.length > 0 || selectedWeights.length > 0) && (
                 <span className="bg-[#1a4731] dark:bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">
-                  {selectedCategories.length + selectedMechanisms.length + (playerCountFilter ? 1 : 0) + (weightFilter ? 1 : 0)}
+                  {selectedCategories.length + selectedMechanisms.length + selectedPlayerCounts.length + selectedWeights.length}
                 </span>
               )}
             </button>
@@ -323,9 +348,9 @@ export default function HomePage() {
                     {PLAYER_COUNT_OPTIONS.map(option => (
                       <button
                         key={option.value}
-                        onClick={() => setPlayerCountFilter(playerCountFilter === option.value ? null : option.value)}
+                        onClick={() => handlePlayerCountToggle(option.value)}
                         className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                          playerCountFilter === option.value
+                          selectedPlayerCounts.includes(option.value)
                             ? 'bg-[#1a4731] dark:bg-green-600 text-white'
                             : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600'
                         }`}
@@ -344,9 +369,9 @@ export default function HomePage() {
                     {WEIGHT_OPTIONS.map(option => (
                       <button
                         key={option.value}
-                        onClick={() => setWeightFilter(weightFilter === option.value ? null : option.value)}
+                        onClick={() => handleWeightToggle(option.value)}
                         className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                          weightFilter === option.value
+                          selectedWeights.includes(option.value)
                             ? 'bg-[#1a4731] dark:bg-green-600 text-white'
                             : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600'
                         }`}
@@ -367,7 +392,7 @@ export default function HomePage() {
             </div>
           )}
 
-          {(selectedCategories.length > 0 || selectedMechanisms.length > 0 || playerCountFilter || weightFilter) && (
+          {(selectedCategories.length > 0 || selectedMechanisms.length > 0 || selectedPlayerCounts.length > 0 || selectedWeights.length > 0) && (
             <div className="flex flex-wrap gap-2">
               {selectedCategories.map(cat => (
                 <span
@@ -397,32 +422,34 @@ export default function HomePage() {
                   </button>
                 </span>
               ))}
-              {playerCountFilter && (
+              {selectedPlayerCounts.map(pc => (
                 <span
+                  key={pc}
                   className="inline-flex items-center gap-1 px-2 sm:px-3 py-0.5 sm:py-1 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-xs sm:text-sm"
                 >
-                  {PLAYER_COUNT_OPTIONS.find(p => p.value === playerCountFilter)?.label}
+                  {PLAYER_COUNT_OPTIONS.find(p => p.value === pc)?.label}
                   <button
-                    onClick={() => removeFilter('playerCount')}
+                    onClick={() => removeFilter('playerCount', pc)}
                     className="hover:bg-green-200 dark:hover:bg-green-800 rounded-full p-0.5 transition-colors"
                   >
                     <X className="w-3 h-3" />
                   </button>
                 </span>
-              )}
-              {weightFilter && (
+              ))}
+              {selectedWeights.map(w => (
                 <span
+                  key={w}
                   className="inline-flex items-center gap-1 px-2 sm:px-3 py-0.5 sm:py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs sm:text-sm"
                 >
-                  {WEIGHT_OPTIONS.find(w => w.value === weightFilter)?.label}
+                  {WEIGHT_OPTIONS.find(opt => opt.value === w)?.label}
                   <button
-                    onClick={() => removeFilter('weight')}
+                    onClick={() => removeFilter('weight', w)}
                     className="hover:bg-purple-200 dark:hover:bg-purple-800 rounded-full p-0.5 transition-colors"
                   >
                     <X className="w-3 h-3" />
                   </button>
                 </span>
-              )}
+              ))}
             </div>
           )}
         </div>
