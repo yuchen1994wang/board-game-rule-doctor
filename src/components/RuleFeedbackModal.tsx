@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
-import { X, AlertTriangle, Send, CheckCircle, MessageSquare, FileText, HelpCircle, Plus } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { X, AlertTriangle, Send, CheckCircle, MessageSquare, FileText, HelpCircle, Plus, Star } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useTheme } from '@/hooks/useTheme'
 
 interface RuleFeedbackModalProps {
   gameId: string
@@ -8,7 +9,7 @@ interface RuleFeedbackModalProps {
   onClose: () => void
 }
 
-export type FeedbackType = 'rule_error' | 'unclear' | 'missing' | 'other'
+export type FeedbackType = 'rule_error' | 'unclear' | 'missing' | 'suggestion' | 'other'
 
 export interface FeedbackItem {
   id: string
@@ -17,6 +18,7 @@ export interface FeedbackItem {
   type: FeedbackType
   typeLabel: string
   description: string
+  rating: number
   timestamp: number
   status: 'pending' | 'confirmed' | 'rejected'
 }
@@ -68,10 +70,17 @@ const feedbackTypes: { key: FeedbackType; label: string; labelEn: string; icon: 
     description: '缺少重要规则或细节'
   },
   {
+    key: 'suggestion',
+    label: '优化建议',
+    labelEn: 'Improvement Suggestion',
+    icon: MessageSquare,
+    description: '对规则描述的改进建议'
+  },
+  {
     key: 'other',
     label: '其他问题',
     labelEn: 'Other',
-    icon: MessageSquare,
+    icon: FileText,
     description: '其他类型的反馈'
   }
 ]
@@ -79,32 +88,77 @@ const feedbackTypes: { key: FeedbackType; label: string; labelEn: string; icon: 
 export default function RuleFeedbackModal({ gameId, gameName, onClose }: RuleFeedbackModalProps) {
   const [selectedType, setSelectedType] = useState<FeedbackType | null>(null)
   const [description, setDescription] = useState('')
+  const [rating, setRating] = useState(0)
   const [submitted, setSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [validationError, setValidationError] = useState('')
+  const [isVisible, setIsVisible] = useState(false)
+  const modalRef = useRef<HTMLDivElement>(null)
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
   const { language } = useLanguage()
+  const { isDark } = useTheme()
 
   useEffect(() => {
+    setTimeout(() => setIsVisible(true), 10)
     document.body.style.overflow = 'hidden'
     return () => {
       document.body.style.overflow = 'auto'
     }
   }, [])
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose()
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
+  useEffect(() => {
+    if (isVisible && textareaRef.current) {
+      setTimeout(() => textareaRef.current?.focus(), 100)
+    }
+  }, [isVisible])
+
+  const handleClose = () => {
+    setIsVisible(false)
+    setTimeout(onClose, 200)
+  }
+
   const handleSubmit = () => {
-    if (!selectedType || !description.trim()) return
+    setValidationError('')
+    
+    if (!selectedType) {
+      setValidationError(language === 'zh' ? '请选择问题类型' : 'Please select an issue type')
+      return
+    }
+    
+    if (!description.trim()) {
+      setValidationError(language === 'zh' ? '请输入详细描述' : 'Please enter a detailed description')
+      textareaRef.current?.focus()
+      return
+    }
+    
+    if (description.trim().length < 10) {
+      setValidationError(language === 'zh' ? '描述至少需要10个字符' : 'Description must be at least 10 characters')
+      textareaRef.current?.focus()
+      return
+    }
 
     setIsSubmitting(true)
 
     const typeInfo = feedbackTypes.find(t => t.key === selectedType)!
 
-    // 模拟提交延迟
     setTimeout(() => {
       addFeedback({
         gameId,
         gameName,
         type: selectedType,
         typeLabel: language === 'zh' ? typeInfo.label : typeInfo.labelEn,
-        description: description.trim()
+        description: description.trim(),
+        rating
       })
       setIsSubmitting(false)
       setSubmitted(true)
@@ -113,7 +167,7 @@ export default function RuleFeedbackModal({ gameId, gameName, onClose }: RuleFee
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      onClose()
+      handleClose()
     }
   }
 
